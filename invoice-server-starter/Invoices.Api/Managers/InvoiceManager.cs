@@ -18,13 +18,13 @@ namespace Invoices.Api.Managers
             this.mapper = mapper;
         }
 
-        public IList<InvoiceDto> GetAllInvoices ()
+        public IList<InvoiceDto> GetAllInvoices()
         {
             IList<Invoice> invoices = invoiceRepository.GetAll();
             return mapper.Map<IList<InvoiceDto>>(invoices);
         }
 
-        public InvoiceDto? GetInvoice(ulong invoiceId)
+        public InvoiceDto? GetInvoice(uint invoiceId)
         {
             Invoice? invoice = invoiceRepository.FindById(invoiceId);
             if (invoice is null)
@@ -43,10 +43,26 @@ namespace Invoices.Api.Managers
 
             return mapper.Map<InvoiceDto>(addedInvoice);
         }
-
-        public void DeleteInvoice(uint invoiceId)
+        public InvoiceDto? UpdateInvoice(uint invoiceId, InvoiceDto invoiceDto)
         {
-            
+            if (!invoiceRepository.ExistsWithId(invoiceId))
+                return null;
+            Invoice invoice = mapper.Map<Invoice>(invoiceDto);
+            invoice.InvoiceId = invoiceId;
+            Invoice updatedInvoice = invoiceRepository.Update(invoice);
+
+            return mapper.Map<InvoiceDto>(updatedInvoice);
+        }
+        public InvoiceDto? DeleteInvoice(uint invoiceId)
+        {
+            if (!invoiceRepository.ExistsWithId(invoiceId)) 
+                return null;
+            Invoice invoice = invoiceRepository.FindById(invoiceId);
+            InvoiceDto invoiceDto = mapper.Map<InvoiceDto>(invoice);
+
+            invoiceRepository.Delete(invoiceId);
+
+            return invoiceDto;
         }
     }
 }

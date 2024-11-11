@@ -22,16 +22,40 @@
 
 using Invoices.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Invoices.Data;
 
 public class InvoicesDbContext : DbContext
 {
     public DbSet<Person>? Persons { get; set; }
-
+    public DbSet<Invoice> Invoices { get; set; }
 
     public InvoicesDbContext(DbContextOptions<InvoicesDbContext> options)
         : base(options)
     {
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder
+            .Entity<Invoice>()
+            .HasOne(m => m.Seller)
+            .WithMany(p => p.InvoiceAsSeller);
+
+        modelBuilder
+             .Entity<Invoice>()
+             .HasOne(m => m.Buyer)
+             .WithMany(p => p.InvoiceAsBuyer);
+
+        IEnumerable<IMutableForeignKey> cascadeFKs = modelBuilder.Model.GetEntityTypes()
+                .SelectMany(type => type.GetForeignKeys())
+                .Where(foreignKey => !foreignKey.IsOwnership && foreignKey.DeleteBehavior == DeleteBehavior.Cascade);
+
+        foreach (IMutableForeignKey foreignKey in cascadeFKs)
+            foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+
     }
 }

@@ -32,5 +32,7 @@ public class AutomapperConfigurationProfile : Profile
     {
         CreateMap<Person, PersonDto>();
         CreateMap<PersonDto, Person>();
+        CreateMap<Invoice, InvoiceDto>();
+        CreateMap<InvoiceDto,Invoice>();
     }
 }

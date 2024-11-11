@@ -28,7 +28,7 @@ namespace Invoices.Api.Models;
 public class PersonDto
 {
     [JsonPropertyName("_id")]
-    public ulong PersonId { get; set; }
+    public uint PersonId { get; set; }
     public string Name { get; set; } = "";
     public string IdentificationNumber { get; set; } = "";
     public string TaxNumber { get; set; } = "";

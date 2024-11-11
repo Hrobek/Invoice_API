@@ -8,7 +8,7 @@ namespace Invoices.Api.Models
     public class InvoiceDto
     {
         [JsonPropertyName("_id")]
-        public ulong InvoiceId { get; set; }
+        public uint InvoiceId { get; set; }
         public ulong InvoiceNumber { get; set; }
         public DateTime Issued { get; set; }
         public DateTime Date { get; set; }
@@ -16,7 +16,8 @@ namespace Invoices.Api.Models
         public long Price { get; set; }
         public int Vat { get; set; }
         public string Note { get; set; } = "";
-        public ulong BuyerId { get; set; }
-        public ulong SellerId { get; set; }
+        public uint BuyerId { get; set; }
+        public uint SellerId { get; set; }
+
     }
 }

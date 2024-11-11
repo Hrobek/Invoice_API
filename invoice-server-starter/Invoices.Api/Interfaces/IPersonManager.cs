@@ -28,7 +28,7 @@ public interface IPersonManager
 {
     IList<PersonDto> GetAllPersons();
     PersonDto AddPerson(PersonDto personDto);
-    PersonDto? GetPerson(ulong personId);
+    PersonDto? GetPerson(uint personId);
     PersonDto? UpdatePerson(uint personId,PersonDto personDto);
     void DeletePerson(uint personId);
 }

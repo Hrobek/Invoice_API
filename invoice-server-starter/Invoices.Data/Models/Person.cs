@@ -28,7 +28,7 @@ namespace Invoices.Data.Models;
 public class Person
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public ulong PersonId { get; set; }
+    public uint PersonId { get; set; }
     [Required]
     public string Name { get; set; } = "";
     [Required]
@@ -57,4 +57,8 @@ public class Person
     public Country Country { get; set; }
     [Required]
     public bool Hidden { get; set; } = false;
+
+    public virtual List<Invoice> InvoiceAsBuyer { get; set; } = new List<Invoice>();
+
+    public virtual List<Invoice> InvoiceAsSeller { get; set; } = new List<Invoice>();
 }

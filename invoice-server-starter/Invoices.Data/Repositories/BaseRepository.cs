@@ -39,12 +39,12 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     }
 
 
-    public TEntity? FindById(ulong id)
+    public TEntity? FindById(uint id)
     {
         return dbSet.Find(id);
     }
 
-    public bool ExistsWithId(ulong id)
+    public bool ExistsWithId(uint id)
     {
         TEntity? entity = dbSet.Find(id);
         if (entity is not null)
@@ -71,7 +71,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return entityEntry.Entity;
     }
 
-    public void Delete(ulong id)
+    public void Delete(uint id)
     {
         TEntity? entity = dbSet.Find(id);
 

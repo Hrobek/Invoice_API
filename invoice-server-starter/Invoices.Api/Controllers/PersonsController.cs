@@ -47,7 +47,7 @@ public class PersonsController : ControllerBase
 
     // api/persons/1
     [HttpGet("{personId}")]
-    public IActionResult GetPerson(ulong personId)
+    public IActionResult GetPerson(uint personId)
     {
         PersonDto? person = personManager.GetPerson(personId);
 

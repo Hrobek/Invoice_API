@@ -40,3 +40,4 @@ D:\Programko\Project_PRO\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\r
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.pdb
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.genruntimeconfig.cache
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\ref\Invoices.Data.dll
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.sourcelink.json

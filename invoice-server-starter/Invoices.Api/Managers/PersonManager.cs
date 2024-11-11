@@ -48,7 +48,7 @@ public class PersonManager : IPersonManager
         return mapper.Map<IList<PersonDto>>(persons);
     }
 
-    public PersonDto? GetPerson(ulong personId)
+    public PersonDto? GetPerson(uint personId)
     {
         Person? person = personRepository.FindById(personId);
 

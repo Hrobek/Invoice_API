@@ -63,7 +63,44 @@
     "Parameters": [
       {
         "Name": "invoiceId",
-        "Type": "System.UInt64",
+        "Type": "System.UInt32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "\u00C9ditInvoice",
+    "RelativePath": "api/Invoices/{invoiceId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.UInt32",
+        "IsRequired": true
+      },
+      {
+        "Name": "invoice",
+        "Type": "Invoices.Api.Models.InvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "DeleteInvoice",
+    "RelativePath": "api/Invoices/{invoiceId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.UInt32",
         "IsRequired": true
       }
     ],
@@ -115,7 +152,7 @@
     "Parameters": [
       {
         "Name": "personId",
-        "Type": "System.UInt64",
+        "Type": "System.UInt32",
         "IsRequired": true
       }
     ],

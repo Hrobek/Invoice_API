@@ -26,13 +26,13 @@ public interface IBaseRepository<TEntity> where TEntity : class
 {
     IList<TEntity> GetAll();
 
-    TEntity? FindById(ulong id);
+    TEntity? FindById(uint id);
 
     TEntity Insert(TEntity entity);
 
     TEntity Update(TEntity entity);
 
-    void Delete(ulong id);
+    void Delete(uint id);
 
-    bool ExistsWithId(ulong id);
+    bool ExistsWithId(uint id);
 }

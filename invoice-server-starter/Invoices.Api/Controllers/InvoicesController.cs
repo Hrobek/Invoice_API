@@ -22,7 +22,7 @@ namespace Invoices.Api.Controllers
         }
 
         [HttpGet("{invoiceId}")]
-        public IActionResult GetInvoice(ulong invoiceId)
+        public IActionResult GetInvoice(uint invoiceId)
         {
             InvoiceDto? invoice = invoiceManager.GetInvoice(invoiceId);
 
@@ -38,6 +38,26 @@ namespace Invoices.Api.Controllers
         {
             InvoiceDto? createdInvoice = invoiceManager.AddInvoice(invoice);
             return StatusCode(StatusCodes.Status201Created, createdInvoice);
+        }
+
+        [HttpPut("{invoiceId}")]
+        public IActionResult ÉditInvoice(uint invoiceId, [FromBody] InvoiceDto invoice)
+        {
+            InvoiceDto? updatedInvoice = invoiceManager.UpdateInvoice(invoiceId, invoice);
+
+            if (updatedInvoice is null)
+                return NotFound();
+            return Ok(updatedInvoice);
+        }
+
+        [HttpDelete("{invoiceId}")]
+        public IActionResult DeleteInvoice(uint invoiceId)
+        {
+            InvoiceDto? deletedInvoice = invoiceManager.DeleteInvoice(invoiceId);
+
+            if (deletedInvoice is null)
+                return NotFound();
+            return Ok(deletedInvoice);
         }
     }
 }

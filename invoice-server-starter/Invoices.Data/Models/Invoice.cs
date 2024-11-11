@@ -11,7 +11,7 @@ namespace Invoices.Data.Models
     public class Invoice
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public ulong InvoiceId { get; set; }
+        public uint InvoiceId { get; set; }
 
         [Required]
         public ulong InvoiceNumber { get; set; }
@@ -32,16 +32,12 @@ namespace Invoices.Data.Models
         public int Vat { get; set; }
  
         public string Note { get; set; } = "";
-
-        [Required]
         [ForeignKey(nameof(Buyer))]
-        public ulong BuyerId { get; set; }
-        public required Person Buyer { get; set; }
-
-        [Required]
+        public uint? BuyerId { get; set; }
+        public virtual Person? Buyer { get; set; }
         [ForeignKey(nameof(Seller))]
-        public ulong SellerId { get; set; }
-        public required Person Seller { get; set; }
+        public uint? SellerId { get; set; }
+        public virtual Person? Seller { get; set; }
 
     }
 }
