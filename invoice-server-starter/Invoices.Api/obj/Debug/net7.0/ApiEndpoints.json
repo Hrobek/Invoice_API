@@ -71,7 +71,7 @@
   },
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
-    "Method": "\u00C9ditInvoice",
+    "Method": "EditInvoice",
     "RelativePath": "api/Invoices/{invoiceId}",
     "HttpMethod": "PUT",
     "IsController": true,

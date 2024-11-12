@@ -18,13 +18,13 @@ namespace Invoices.Api.Controllers
         [HttpGet]
         public IEnumerable<InvoiceDto> GetInvoices()
         {
-            return invoiceManager.GetAllInvoices();
+            return invoiceManager.GetAll();
         }
 
         [HttpGet("{invoiceId}")]
         public IActionResult GetInvoice(uint invoiceId)
         {
-            InvoiceDto? invoice = invoiceManager.GetInvoice(invoiceId);
+            InvoiceDto? invoice = invoiceManager.Get(invoiceId);
 
             if (invoice is null)
             {
@@ -36,14 +36,14 @@ namespace Invoices.Api.Controllers
         [HttpPost]
         public IActionResult AddInvoice([FromBody] InvoiceDto invoice)
         {
-            InvoiceDto? createdInvoice = invoiceManager.AddInvoice(invoice);
+            InvoiceDto? createdInvoice = invoiceManager.Add(invoice);
             return StatusCode(StatusCodes.Status201Created, createdInvoice);
         }
 
         [HttpPut("{invoiceId}")]
-        public IActionResult ÉditInvoice(uint invoiceId, [FromBody] InvoiceDto invoice)
+        public IActionResult EditInvoice(uint invoiceId, [FromBody] InvoiceDto invoice)
         {
-            InvoiceDto? updatedInvoice = invoiceManager.UpdateInvoice(invoiceId, invoice);
+            InvoiceDto? updatedInvoice = invoiceManager.Update(invoiceId, invoice);
 
             if (updatedInvoice is null)
                 return NotFound();

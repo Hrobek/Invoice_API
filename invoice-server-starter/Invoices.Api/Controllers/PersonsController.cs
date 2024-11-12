@@ -42,14 +42,14 @@ public class PersonsController : ControllerBase
     [HttpGet]
     public IEnumerable<PersonDto> GetPersons()
     {
-        return personManager.GetAllPersons();
+        return personManager.GetAll();
     }
 
     // api/persons/1
     [HttpGet("{personId}")]
     public IActionResult GetPerson(uint personId)
     {
-        PersonDto? person = personManager.GetPerson(personId);
+        PersonDto? person = personManager.Get(personId);
 
         if (person is null)
         {
@@ -62,13 +62,13 @@ public class PersonsController : ControllerBase
     [HttpPost]
     public IActionResult AddPerson([FromBody] PersonDto person)
     {
-        PersonDto? createdPerson = personManager.AddPerson(person);
+        PersonDto? createdPerson = personManager.Add(person);
         return StatusCode(StatusCodes.Status201Created, createdPerson);
     }
     [HttpPut("{personId}")]
     public IActionResult UpdatePerson(uint personId, [FromBody] PersonDto updatedPerson)
     {
-        PersonDto updatedPersons = personManager.UpdatePerson(personId, updatedPerson);
+        PersonDto? updatedPersons = personManager.Update(personId, updatedPerson);
         return StatusCode(StatusCodes.Status201Created, updatedPerson);
     }
 

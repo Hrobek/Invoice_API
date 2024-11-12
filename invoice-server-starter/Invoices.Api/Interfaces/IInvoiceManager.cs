@@ -2,12 +2,8 @@
 
 namespace Invoices.Api.Interfaces
 {
-    public interface IInvoiceManager
+    public interface IInvoiceManager : IBaseManager<InvoiceDto>
     {
-        IList<InvoiceDto> GetAllInvoices();
-        InvoiceDto? GetInvoice(uint invoiceId);
-        InvoiceDto AddInvoice(InvoiceDto invoiceDto);
-        InvoiceDto? UpdateInvoice(uint invoiceId, InvoiceDto invoiceDto);
         InvoiceDto? DeleteInvoice(uint invoiceId);
     }
 }

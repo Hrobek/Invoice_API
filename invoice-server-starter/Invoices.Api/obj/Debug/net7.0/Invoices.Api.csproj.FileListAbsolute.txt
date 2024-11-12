@@ -165,11 +165,8 @@ D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\In
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.AssemblyInfoInputs.cache
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.AssemblyInfo.cs
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.csproj.CoreCompileInputs.cache
-D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.MvcApplicationPartsAssemblyInfo.cache
-D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.dll
-D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\refint\Invoices.Api.dll
-D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.pdb
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.sourcelink.json
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\bin\Debug\net7.0\appsettings.Development.json
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\bin\Debug\net7.0\appsettings.json
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\bin\Debug\net7.0\Invoices.Api.exe
@@ -239,6 +236,8 @@ D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\st
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\staticwebassets.pack.json
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\scopedcss\bundle\Invoices.Api.styles.css
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.AC752CDB.Up2Date
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.dll
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\refint\Invoices.Api.dll
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.pdb
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.genruntimeconfig.cache
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\ref\Invoices.Api.dll
-D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.sourcelink.json

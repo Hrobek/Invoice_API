@@ -40,7 +40,7 @@ public class InvoicesDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder
+        /*modelBuilder
             .Entity<Invoice>()
             .HasOne(m => m.Seller)
             .WithMany(p => p.InvoiceAsSeller);
@@ -48,7 +48,7 @@ public class InvoicesDbContext : DbContext
         modelBuilder
              .Entity<Invoice>()
              .HasOne(m => m.Buyer)
-             .WithMany(p => p.InvoiceAsBuyer);
+             .WithMany(p => p.InvoiceAsBuyer);*/
 
         IEnumerable<IMutableForeignKey> cascadeFKs = modelBuilder.Model.GetEntityTypes()
                 .SelectMany(type => type.GetForeignKeys())

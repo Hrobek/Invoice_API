@@ -58,7 +58,7 @@ public class Person
     [Required]
     public bool Hidden { get; set; } = false;
 
-    public virtual List<Invoice> InvoiceAsBuyer { get; set; } = new List<Invoice>();
+    //public virtual List<Invoice> InvoiceAsBuyer { get; set; } = new List<Invoice>();
 
-    public virtual List<Invoice> InvoiceAsSeller { get; set; } = new List<Invoice>();
+    //public virtual List<Invoice> InvoiceAsSeller { get; set; } = new List<Invoice>();
 }
