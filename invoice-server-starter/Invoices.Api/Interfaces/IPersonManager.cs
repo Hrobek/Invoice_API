@@ -24,7 +24,11 @@ using Invoices.Api.Models;
 
 namespace Invoices.Api.Interfaces;
 
-public interface IPersonManager : IBaseManager<PersonDto>
-{ 
+public interface IPersonManager //: IBaseManager<PersonDto>
+{
+    IList<PersonDto> GetAll();
+    PersonDto? Get(uint id);
+    PersonDto Add(PersonDto personDto);
+    PersonDto? Update(uint id, PersonDto personDto);
     void DeletePerson(uint personId);
 }

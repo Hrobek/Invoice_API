@@ -23,6 +23,7 @@
 using Invoices.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Linq.Expressions;
 
 namespace Invoices.Data.Repositories;
 
@@ -89,4 +90,15 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             throw;
         }
     }
+
+    public TEntity GetWithIncludes(uint id, params Expression<Func<TEntity, object>>[] includes)
+    {
+        IQueryable<TEntity> query = dbSet;
+        foreach (var include in includes)
+        {
+            query = query.Include(include);
+        }
+        return query.FirstOrDefault(e => EF.Property<int>(e, "InvoiceId") == id);
+    }
+
 }

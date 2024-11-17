@@ -16,9 +16,13 @@ namespace Invoices.Api.Models
         public long Price { get; set; }
         public int Vat { get; set; }
         public string Note { get; set; } = "";
+
+        //[JsonPropertyName("buyerId")]
         //public uint BuyerId { get; set; }
-        public virtual PersonDto? Buyer { get; set; }
+
+        //[JsonPropertyName("sellerId")]
         //public uint SellerId { get; set; }
+        public virtual PersonDto? Buyer { get; set; }
         public virtual PersonDto? Seller { get; set; }
     }
 }

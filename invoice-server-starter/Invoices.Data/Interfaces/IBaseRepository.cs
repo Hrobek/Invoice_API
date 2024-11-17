@@ -20,6 +20,8 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
+using System.Linq.Expressions;
+
 namespace Invoices.Data.Interfaces;
 
 public interface IBaseRepository<TEntity> where TEntity : class
@@ -35,4 +37,5 @@ public interface IBaseRepository<TEntity> where TEntity : class
     void Delete(uint id);
 
     bool ExistsWithId(uint id);
+    TEntity GetWithIncludes(uint id, params Expression<Func<TEntity, object>>[] includes);
 }

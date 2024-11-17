@@ -39,9 +39,13 @@ namespace Invoices.Api.Managers
         {
             Invoice invoice = mapper.Map<Invoice>(invoiceDto);
             invoice.InvoiceId = default;
+
+
             Invoice addedInvoice = invoiceRepository.Insert(invoice);
 
             return mapper.Map<InvoiceDto>(addedInvoice);
+
+            
         }
         public InvoiceDto? Update(uint invoiceId, InvoiceDto invoiceDto)
         {

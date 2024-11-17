@@ -241,3 +241,4 @@ D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\re
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.pdb
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.genruntimeconfig.cache
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\ref\Invoices.Api.dll
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.MvcApplicationPartsAssemblyInfo.cs

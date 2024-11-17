@@ -58,4 +58,5 @@ public class InvoicesDbContext : DbContext
             foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
 
     }
+
 }

@@ -1,6 +1,8 @@
 ﻿using Invoices.Api.Interfaces;
 using Invoices.Api.Models;
+using Invoices.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Invoices.Api.Controllers
 {
@@ -57,7 +59,7 @@ namespace Invoices.Api.Controllers
 
             if (deletedInvoice is null)
                 return NotFound();
-            return Ok(deletedInvoice);
+            return NoContent();
         }
     }
 }
