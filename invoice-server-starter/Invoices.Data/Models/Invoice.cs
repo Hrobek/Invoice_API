@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Invoices.Data.Models
 {
-    public class Invoice
+    public class Invoice : IEntity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public uint InvoiceId { get; set; }
+        public ulong Id { get; set; }
 
         [Required]
         public ulong InvoiceNumber { get; set; }
@@ -33,11 +33,13 @@ namespace Invoices.Data.Models
  
         public string Note { get; set; } = "";
         [ForeignKey(nameof(Buyer))]
-        public uint? BuyerId { get; set; }
+        public ulong? BuyerId { get; set; }
         public virtual Person? Buyer { get; set; }
         [ForeignKey(nameof(Seller))]
-        public uint? SellerId { get; set; }
+        public ulong? SellerId { get; set; }
         public virtual Person? Seller { get; set; }
+
+
 
     }
 }

@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "D:\\Programko\\Project_PRO\\invoice-server-starter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\automapperconfigurationprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\automapperconfigurationprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\managers\\basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\managers\\basemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\controllers\\personscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\controllers\\personscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,28 +35,24 @@
       "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\interfaces\\iinvoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\controllers\\personscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\controllers\\personscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\interfaces\\ipersonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\interfaces\\ipersonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\invoicesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\invoicesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\interfaces\\ibasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\interfaces\\ibasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\interfaces\\ipersonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\interfaces\\ipersonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\models\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\models\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\repositories\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\repositories\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.api\\models\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\models\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|d:\\programko\\project_pro\\invoice-server-starter\\invoices.data\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -79,196 +71,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Program.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Program.cs",
-              "RelativeToolTip": "Invoices.Api\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:15:04.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\Interfaces\\IBaseRepository.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IBaseRepository.cs",
-              "RelativeToolTip": "Invoices.Data\\Interfaces\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:50:09.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\BaseRepository.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "Invoices.Data\\Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwF4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:46:31.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AutomapperConfigurationProfile.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\AutomapperConfigurationProfile.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\AutomapperConfigurationProfile.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\AutomapperConfigurationProfile.cs",
-              "RelativeToolTip": "Invoices.Api\\AutomapperConfigurationProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:45:09.486Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IInvoiceRepository.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
-              "RelativeToolTip": "Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:41:48.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IPersonRepository.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IPersonRepository.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\Interfaces\\IPersonRepository.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IPersonRepository.cs",
-              "RelativeToolTip": "Invoices.Data\\Interfaces\\IPersonRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:41:47.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "InvoiceRepository.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "RelativeToolTip": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T19:41:44.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PersonsController.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\PersonsController.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Controllers\\PersonsController.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\PersonsController.cs",
-              "RelativeToolTip": "Invoices.Api\\Controllers\\PersonsController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:51:05.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "InvoicesDbContext.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\InvoicesDbContext.cs",
-              "RelativeDocumentMoniker": "Invoices.Data\\InvoicesDbContext.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\InvoicesDbContext.cs",
-              "RelativeToolTip": "Invoices.Data\\InvoicesDbContext.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:38:21.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvoicesController.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Controllers\\InvoicesController.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
-              "RelativeToolTip": "Invoices.Api\\Controllers\\InvoicesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:35:51.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InvoiceDto.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Models\\InvoiceDto.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Models\\InvoiceDto.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Models\\InvoiceDto.cs",
-              "RelativeToolTip": "Invoices.Api\\Models\\InvoiceDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:27:51.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IPersonManager.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IPersonManager.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Interfaces\\IPersonManager.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IPersonManager.cs",
-              "RelativeToolTip": "Invoices.Api\\Interfaces\\IPersonManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:24:48.182Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IInvoiceManager.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IInvoiceManager.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Interfaces\\IInvoiceManager.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IInvoiceManager.cs",
-              "RelativeToolTip": "Invoices.Api\\Interfaces\\IInvoiceManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:24:47.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IBaseManager.cs",
-              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IBaseManager.cs",
-              "RelativeDocumentMoniker": "Invoices.Api\\Interfaces\\IBaseManager.cs",
-              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IBaseManager.cs",
-              "RelativeToolTip": "Invoices.Api\\Interfaces\\IBaseManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:24:46.214Z"
             },
             {
               "$type": "Document",
@@ -278,10 +80,168 @@
               "RelativeDocumentMoniker": "Invoices.Api\\Managers\\InvoiceManager.cs",
               "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Managers\\InvoiceManager.cs",
               "RelativeToolTip": "Invoices.Api\\Managers\\InvoiceManager.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADUAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:31:52.958Z",
+              "WhenOpened": "2024-11-18T16:42:18.571Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InvoiceRepository.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T18:23:24.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoicesController.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
+              "RelativeDocumentMoniker": "Invoices.Api\\Controllers\\InvoicesController.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
+              "RelativeToolTip": "Invoices.Api\\Controllers\\InvoicesController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwCsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:48:36.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseManager.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Managers\\BaseManager.cs",
+              "RelativeDocumentMoniker": "Invoices.Api\\Managers\\BaseManager.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Managers\\BaseManager.cs",
+              "RelativeToolTip": "Invoices.Api\\Managers\\BaseManager.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:17:58.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IInvoiceRepository.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Interfaces\\IInvoiceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T18:04:57.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Interfaces\\IBaseRepository.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Interfaces\\IBaseRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Interfaces\\IBaseRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:27:15.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\BaseRepository.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Repositories\\BaseRepository.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAF0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:09:56.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PersonsController.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\PersonsController.cs",
+              "RelativeDocumentMoniker": "Invoices.Api\\Controllers\\PersonsController.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Controllers\\PersonsController.cs",
+              "RelativeToolTip": "Invoices.Api\\Controllers\\PersonsController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:53:36.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IBaseManager.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IBaseManager.cs",
+              "RelativeDocumentMoniker": "Invoices.Api\\Interfaces\\IBaseManager.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Interfaces\\IBaseManager.cs",
+              "RelativeToolTip": "Invoices.Api\\Interfaces\\IBaseManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:33:31.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Models\\IEntity.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Models\\IEntity.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Models\\IEntity.cs",
+              "RelativeToolTip": "Invoices.Data\\Models\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T17:02:29.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PersonRepository.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\PersonRepository.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\PersonRepository.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Repositories\\PersonRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Repositories\\PersonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T18:04:52.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PersonDto.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Models\\PersonDto.cs",
+              "RelativeDocumentMoniker": "Invoices.Api\\Models\\PersonDto.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Api\\Models\\PersonDto.cs",
+              "RelativeToolTip": "Invoices.Api\\Models\\PersonDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T17:15:17.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Person.cs",
+              "DocumentMoniker": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Models\\Person.cs",
+              "RelativeDocumentMoniker": "Invoices.Data\\Models\\Person.cs",
+              "ToolTip": "D:\\Programko\\Project_PRO\\invoice-server-starter\\Invoices.Data\\Models\\Person.cs",
+              "RelativeToolTip": "Invoices.Data\\Models\\Person.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T17:03:14.643Z"
             }
           ]
         }

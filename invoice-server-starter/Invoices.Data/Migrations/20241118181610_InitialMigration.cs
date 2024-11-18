@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Invoices.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialInvoicesMigration : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace Invoices.Data.Migrations
                 name: "Persons",
                 columns: table => new
                 {
-                    PersonId = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<decimal>(type: "decimal(20,0)", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -34,14 +34,14 @@ namespace Invoices.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Persons", x => x.PersonId);
+                    table.PrimaryKey("PK_Persons", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Invoices",
                 columns: table => new
                 {
-                    InvoiceId = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<decimal>(type: "decimal(20,0)", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     InvoiceNumber = table.Column<decimal>(type: "decimal(20,0)", nullable: false),
                     Issued = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -50,22 +50,24 @@ namespace Invoices.Data.Migrations
                     Price = table.Column<long>(type: "bigint", nullable: false),
                     Vat = table.Column<int>(type: "int", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BuyerId = table.Column<long>(type: "bigint", nullable: true),
-                    SellerId = table.Column<long>(type: "bigint", nullable: true)
+                    BuyerId = table.Column<decimal>(type: "decimal(20,0)", nullable: true),
+                    SellerId = table.Column<decimal>(type: "decimal(20,0)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Invoices", x => x.InvoiceId);
+                    table.PrimaryKey("PK_Invoices", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Invoices_Persons_BuyerId",
                         column: x => x.BuyerId,
                         principalTable: "Persons",
-                        principalColumn: "PersonId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Invoices_Persons_SellerId",
                         column: x => x.SellerId,
                         principalTable: "Persons",
-                        principalColumn: "PersonId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

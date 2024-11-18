@@ -18,23 +18,20 @@ namespace Invoices.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.11")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Invoices.Data.Models.Invoice", b =>
                 {
-                    b.Property<long>("InvoiceId")
+                    b.Property<decimal>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("decimal(20,0)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("InvoiceId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<decimal>("Id"));
 
-                    b.Property<long?>("BuyerId")
-                        .HasColumnType("bigint");
+                    b.Property<decimal?>("BuyerId")
+                        .HasColumnType("decimal(20,0)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -56,13 +53,13 @@ namespace Invoices.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("SellerId")
-                        .HasColumnType("bigint");
+                    b.Property<decimal?>("SellerId")
+                        .HasColumnType("decimal(20,0)");
 
                     b.Property<int>("Vat")
                         .HasColumnType("int");
 
-                    b.HasKey("InvoiceId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BuyerId");
 
@@ -73,11 +70,11 @@ namespace Invoices.Data.Migrations
 
             modelBuilder.Entity("Invoices.Data.Models.Person", b =>
                 {
-                    b.Property<long>("PersonId")
+                    b.Property<decimal>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("decimal(20,0)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("PersonId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<decimal>("Id"));
 
                     b.Property<string>("AccountNumber")
                         .IsRequired()
@@ -133,7 +130,7 @@ namespace Invoices.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PersonId");
+                    b.HasKey("Id");
 
                     b.ToTable("Persons");
                 });
@@ -141,23 +138,18 @@ namespace Invoices.Data.Migrations
             modelBuilder.Entity("Invoices.Data.Models.Invoice", b =>
                 {
                     b.HasOne("Invoices.Data.Models.Person", "Buyer")
-                        .WithMany("InvoiceAsBuyer")
-                        .HasForeignKey("BuyerId");
+                        .WithMany()
+                        .HasForeignKey("BuyerId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Invoices.Data.Models.Person", "Seller")
-                        .WithMany("InvoiceAsSeller")
-                        .HasForeignKey("SellerId");
+                        .WithMany()
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Buyer");
 
                     b.Navigation("Seller");
-                });
-
-            modelBuilder.Entity("Invoices.Data.Models.Person", b =>
-                {
-                    b.Navigation("InvoiceAsBuyer");
-
-                    b.Navigation("InvoiceAsSeller");
                 });
 #pragma warning restore 612, 618
         }

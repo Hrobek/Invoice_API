@@ -1,0 +1,536 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Invoices",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Invoices": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Invoices"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Invoices/{Id}": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Invoices"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Invoices"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Invoices.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Persons": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Persons"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Persons/{Id}": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Persons"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Persons"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Country": {
+        "enum": [
+          "CZECHIA",
+          "SLOVAKIA"
+        ],
+        "type": "string"
+      },
+      "InvoiceDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoiceNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "buyer": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "buyerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "seller": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "issued": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "product": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Person": {
+        "required": [
+          "accountNumber",
+          "bankCode",
+          "city",
+          "country",
+          "hidden",
+          "iban",
+          "identificationNumber",
+          "mail",
+          "name",
+          "note",
+          "street",
+          "taxNumber",
+          "telephone",
+          "zip"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "identificationNumber": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "taxNumber": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "accountNumber": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bankCode": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "iban": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "telephone": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "mail": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "street": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "zip": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "note": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "hidden": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "iban": {
+            "type": "string",
+            "nullable": true
+          },
+          "telephone": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "zip": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

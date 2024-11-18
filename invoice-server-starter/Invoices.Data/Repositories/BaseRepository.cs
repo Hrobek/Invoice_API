@@ -21,13 +21,14 @@
  */
 
 using Invoices.Data.Interfaces;
+using Invoices.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
 namespace Invoices.Data.Repositories;
 
-public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, IEntity
 {
     protected readonly InvoicesDbContext invoicesDbContext;
     protected readonly DbSet<TEntity> dbSet;
@@ -40,12 +41,12 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     }
 
 
-    public TEntity? FindById(uint id)
+    public virtual TEntity? FindById(ulong id)
     {
         return dbSet.Find(id);
     }
 
-    public bool ExistsWithId(uint id)
+    public bool ExistsWithId(ulong id)
     {
         TEntity? entity = dbSet.Find(id);
         if (entity is not null)
@@ -53,7 +54,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return entity is not null;
     }
 
-    public IList<TEntity> GetAll()
+    public virtual IList<TEntity> GetAll()
     {
         return dbSet.ToList();
     }
@@ -72,7 +73,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return entityEntry.Entity;
     }
 
-    public void Delete(uint id)
+    public virtual void Delete(ulong id)
     {
         TEntity? entity = dbSet.Find(id);
 
@@ -90,15 +91,4 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             throw;
         }
     }
-
-    public TEntity GetWithIncludes(uint id, params Expression<Func<TEntity, object>>[] includes)
-    {
-        IQueryable<TEntity> query = dbSet;
-        foreach (var include in includes)
-        {
-            query = query.Include(include);
-        }
-        return query.FirstOrDefault(e => EF.Property<int>(e, "InvoiceId") == id);
-    }
-
 }

@@ -242,3 +242,7 @@ D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\In
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.genruntimeconfig.cache
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\ref\Invoices.Api.dll
 D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\Invoices.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\bin\Debug\net7.0\Invoices.Api.staticwebassets.endpoints.json
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\staticwebassets\msbuild.Invoices.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Programko\Project_PRO\invoice-server-starter\Invoices.Api\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt

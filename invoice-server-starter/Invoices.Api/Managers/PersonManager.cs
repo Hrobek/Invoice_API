@@ -26,10 +26,11 @@ using Invoices.Api.Models;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
 using Invoices.Data.Repositories;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Invoices.Api.Managers;
 
-public class PersonManager : IPersonManager
+public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
 {
     private readonly IPersonRepository personRepository;
     private readonly IMapper mapper;
@@ -63,7 +64,7 @@ public class PersonManager : IPersonManager
     public PersonDto Add(PersonDto personDto)
     {
         Person person = mapper.Map<Person>(personDto);
-        person.PersonId = default;
+        person.Id = default;
         Person addedPerson = personRepository.Insert(person);
 
         return mapper.Map<PersonDto>(addedPerson);
@@ -78,20 +79,21 @@ public class PersonManager : IPersonManager
         HidePerson(personId);
 
         Person person = mapper.Map<Person>(updatedPersonDto);
-        person.PersonId = default;
+        person.Id = default;
         Person updatedPerson = personRepository.Insert(person);
 
         return mapper.Map<PersonDto> (updatedPerson);
     }
 
-    public void DeletePerson(uint personId)
+    public override PersonDto? Delete(ulong Id)
     {
-        HidePerson(personId);
+        HidePerson(Id);
+        return null;
     }
 
-    private Person? HidePerson(uint personId)
+    private Person? HidePerson(ulong Id)
     {
-        Person? person = personRepository.FindById(personId);
+        Person? person = personRepository.FindById(Id);
 
         if (person is null)
             return null;

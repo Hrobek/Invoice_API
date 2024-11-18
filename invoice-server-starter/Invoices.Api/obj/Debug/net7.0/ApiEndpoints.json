@@ -46,7 +46,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoice",
+        "Name": "invoiceDto",
         "Type": "Invoices.Api.Models.InvoiceDto",
         "IsRequired": true
       }
@@ -56,14 +56,14 @@
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
     "Method": "GetInvoice",
-    "RelativePath": "api/Invoices/{invoiceId}",
+    "RelativePath": "api/Invoices/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoiceId",
-        "Type": "System.UInt32",
+        "Name": "Id",
+        "Type": "System.UInt64",
         "IsRequired": true
       }
     ],
@@ -72,14 +72,14 @@
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
     "Method": "EditInvoice",
-    "RelativePath": "api/Invoices/{invoiceId}",
+    "RelativePath": "api/Invoices/{Id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoiceId",
-        "Type": "System.UInt32",
+        "Name": "Id",
+        "Type": "System.UInt64",
         "IsRequired": true
       },
       {
@@ -93,14 +93,14 @@
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
     "Method": "DeleteInvoice",
-    "RelativePath": "api/Invoices/{invoiceId}",
+    "RelativePath": "api/Invoices/{Id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoiceId",
-        "Type": "System.UInt32",
+        "Name": "Id",
+        "Type": "System.UInt64",
         "IsRequired": true
       }
     ],
@@ -145,13 +145,13 @@
   {
     "ContainingType": "Invoices.Api.Controllers.PersonsController",
     "Method": "GetPerson",
-    "RelativePath": "api/Persons/{personId}",
+    "RelativePath": "api/Persons/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "personId",
+        "Name": "Id",
         "Type": "System.UInt32",
         "IsRequired": true
       }
@@ -161,13 +161,13 @@
   {
     "ContainingType": "Invoices.Api.Controllers.PersonsController",
     "Method": "UpdatePerson",
-    "RelativePath": "api/Persons/{personId}",
+    "RelativePath": "api/Persons/{Id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "personId",
+        "Name": "Id",
         "Type": "System.UInt32",
         "IsRequired": true
       },
@@ -182,13 +182,13 @@
   {
     "ContainingType": "Invoices.Api.Controllers.PersonsController",
     "Method": "DeletePerson",
-    "RelativePath": "api/Persons/{personId}",
+    "RelativePath": "api/Persons/{Id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "personId",
+        "Name": "Id",
         "Type": "System.UInt32",
         "IsRequired": true
       }

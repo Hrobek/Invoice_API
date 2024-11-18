@@ -25,10 +25,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Invoices.Data.Models;
 
-public class Person
+public class Person : IEntity
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public uint PersonId { get; set; }
+    public ulong Id { get; set; }
     [Required]
     public string Name { get; set; } = "";
     [Required]

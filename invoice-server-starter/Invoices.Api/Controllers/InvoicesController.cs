@@ -1,6 +1,9 @@
-﻿using Invoices.Api.Interfaces;
+﻿using AutoMapper;
+using Invoices.Api.Interfaces;
+using Invoices.Api.Managers;
 using Invoices.Api.Models;
 using Invoices.Data;
+using Invoices.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,10 +26,10 @@ namespace Invoices.Api.Controllers
             return invoiceManager.GetAll();
         }
 
-        [HttpGet("{invoiceId}")]
-        public IActionResult GetInvoice(uint invoiceId)
+        [HttpGet("{Id}")]
+        public IActionResult GetInvoice(ulong Id)
         {
-            InvoiceDto? invoice = invoiceManager.Get(invoiceId);
+            InvoiceDto? invoice = invoiceManager.Get(Id);
 
             if (invoice is null)
             {
@@ -36,26 +39,28 @@ namespace Invoices.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddInvoice([FromBody] InvoiceDto invoice)
+        public async Task<IActionResult> AddInvoice([FromBody] InvoiceDto invoiceDto)
         {
-            InvoiceDto? createdInvoice = invoiceManager.Add(invoice);
+            InvoiceDto? createdInvoice = invoiceManager.Add(invoiceDto);
+
             return StatusCode(StatusCodes.Status201Created, createdInvoice);
+
         }
 
-        [HttpPut("{invoiceId}")]
-        public IActionResult EditInvoice(uint invoiceId, [FromBody] InvoiceDto invoice)
+        [HttpPut("{Id}")]
+        public IActionResult EditInvoice(ulong Id, [FromBody] InvoiceDto invoice)
         {
-            InvoiceDto? updatedInvoice = invoiceManager.Update(invoiceId, invoice);
+            InvoiceDto? updatedInvoice = invoiceManager.Update(Id, invoice);
 
             if (updatedInvoice is null)
                 return NotFound();
             return Ok(updatedInvoice);
         }
 
-        [HttpDelete("{invoiceId}")]
-        public IActionResult DeleteInvoice(uint invoiceId)
+        [HttpDelete("{Id}")]
+        public IActionResult DeleteInvoice(ulong Id)
         {
-            InvoiceDto? deletedInvoice = invoiceManager.DeleteInvoice(invoiceId);
+            InvoiceDto? deletedInvoice = invoiceManager.Delete(Id);
 
             if (deletedInvoice is null)
                 return NotFound();

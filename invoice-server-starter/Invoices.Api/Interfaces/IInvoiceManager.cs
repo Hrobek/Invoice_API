@@ -1,13 +1,10 @@
 ﻿using Invoices.Api.Models;
+using Invoices.Data.Models;
 
 namespace Invoices.Api.Interfaces
 {
-    public interface IInvoiceManager //: IBaseManager<InvoiceDto>
+    public interface IInvoiceManager : IBaseManager<InvoiceDto, Invoice>
     {
-        IList<InvoiceDto> GetAll();
-        InvoiceDto? Get(uint id);
-        InvoiceDto Add(InvoiceDto inoviceDto);
-        InvoiceDto? Update(uint id, InvoiceDto invoiceDto);
-        InvoiceDto? DeleteInvoice(uint invoiceId);
+     
     }
 }

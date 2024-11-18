@@ -46,10 +46,10 @@ public class PersonsController : ControllerBase
     }
 
     // api/persons/1
-    [HttpGet("{personId}")]
-    public IActionResult GetPerson(uint personId)
+    [HttpGet("{Id}")]
+    public IActionResult GetPerson(uint Id)
     {
-        PersonDto? person = personManager.Get(personId);
+        PersonDto? person = personManager.Get(Id);
 
         if (person is null)
         {
@@ -65,17 +65,17 @@ public class PersonsController : ControllerBase
         PersonDto? createdPerson = personManager.Add(person);
         return StatusCode(StatusCodes.Status201Created, createdPerson);
     }
-    [HttpPut("{personId}")]
-    public IActionResult UpdatePerson(uint personId, [FromBody] PersonDto updatedPerson)
+    [HttpPut("{Id}")]
+    public IActionResult UpdatePerson(uint Id, [FromBody] PersonDto updatedPerson)
     {
-        PersonDto? updatedPersons = personManager.Update(personId, updatedPerson);
+        PersonDto? updatedPersons = personManager.Update(Id, updatedPerson);
         return StatusCode(StatusCodes.Status201Created, updatedPerson);
     }
 
-    [HttpDelete("{personId}")]
-    public IActionResult DeletePerson(uint personId)
+    [HttpDelete("{Id}")]
+    public IActionResult DeletePerson(uint Id)
     {
-        personManager.DeletePerson(personId);
+        personManager.Delete(Id);
         return NoContent();
     }
 }

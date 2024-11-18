@@ -20,22 +20,21 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
+using Invoices.Data.Models;
 using System.Linq.Expressions;
 
 namespace Invoices.Data.Interfaces;
 
-public interface IBaseRepository<TEntity> where TEntity : class
+public interface IBaseRepository<TEntity> where TEntity : IEntity
 {
     IList<TEntity> GetAll();
-
-    TEntity? FindById(uint id);
 
     TEntity Insert(TEntity entity);
 
     TEntity Update(TEntity entity);
 
-    void Delete(uint id);
+    void Delete(ulong id);
 
-    bool ExistsWithId(uint id);
-    TEntity GetWithIncludes(uint id, params Expression<Func<TEntity, object>>[] includes);
+    bool ExistsWithId(ulong id);
+    TEntity? FindById(ulong id);
 }

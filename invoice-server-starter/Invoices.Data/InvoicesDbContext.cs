@@ -29,7 +29,7 @@ namespace Invoices.Data;
 public class InvoicesDbContext : DbContext
 {
     public DbSet<Person>? Persons { get; set; }
-    public DbSet<Invoice> Invoices { get; set; }
+    public DbSet<Invoice>? Invoices { get; set; }
 
     public InvoicesDbContext(DbContextOptions<InvoicesDbContext> options)
         : base(options)
@@ -40,15 +40,19 @@ public class InvoicesDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        /*modelBuilder
-            .Entity<Invoice>()
-            .HasOne(m => m.Seller)
-            .WithMany(p => p.InvoiceAsSeller);
+        modelBuilder.Entity<Invoice>()
+            .HasOne(i => i.Buyer)
+            .WithMany()
+            .HasForeignKey(i => i.BuyerId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder
-             .Entity<Invoice>()
-             .HasOne(m => m.Buyer)
-             .WithMany(p => p.InvoiceAsBuyer);*/
+        modelBuilder.Entity<Invoice>()
+            .HasOne(i => i.Seller)
+            .WithMany()
+            .HasForeignKey(i => i.SellerId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+
 
         IEnumerable<IMutableForeignKey> cascadeFKs = modelBuilder.Model.GetEntityTypes()
                 .SelectMany(type => type.GetForeignKeys())
