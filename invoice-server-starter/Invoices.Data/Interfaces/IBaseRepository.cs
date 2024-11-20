@@ -30,9 +30,7 @@ public interface IBaseRepository<TEntity> where TEntity : IEntity
     IList<TEntity> GetAll();
 
     TEntity Insert(TEntity entity);
-
     TEntity Update(TEntity entity);
-
     void Delete(ulong id);
 
     bool ExistsWithId(ulong id);

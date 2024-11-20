@@ -18,13 +18,76 @@
     ]
   },
   {
+    "ContainingType": "Invoices.Api.Controllers.IdentificationController",
+    "Method": "GetByInBuyer",
+    "RelativePath": "api/Identification/{identificationNumber}/purchases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identificationNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.IdentificationController",
+    "Method": "GetByInSeller",
+    "RelativePath": "api/Identification/{identificationNumber}/sales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identificationNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
     "Method": "GetInvoices",
     "RelativePath": "api/Invoices",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "sellerId",
+        "Type": "System.Nullable\u00601[[System.UInt32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "buyerId",
+        "Type": "System.Nullable\u00601[[System.UInt32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "product",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Invoices.Api.Models.InvoiceDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -55,7 +118,7 @@
   },
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
-    "Method": "GetInvoice",
+    "Method": "Get",
     "RelativePath": "api/Invoices/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -152,7 +215,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.UInt32",
+        "Type": "System.UInt64",
         "IsRequired": true
       }
     ],
@@ -168,7 +231,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.UInt32",
+        "Type": "System.UInt64",
         "IsRequired": true
       },
       {
@@ -189,7 +252,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.UInt32",
+        "Type": "System.UInt64",
         "IsRequired": true
       }
     ],

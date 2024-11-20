@@ -21,13 +21,13 @@ namespace Invoices.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<InvoiceDto> GetInvoices()
+        public IEnumerable<InvoiceDto> GetInvoices([FromQuery] InvoiceFilterDto invoiceFilter)
         {
-            return invoiceManager.GetAll();
+            return invoiceManager.GetAll(invoiceFilter);
         }
 
         [HttpGet("{Id}")]
-        public IActionResult GetInvoice(ulong Id)
+        public IActionResult Get(ulong Id)
         {
             InvoiceDto? invoice = invoiceManager.Get(Id);
 

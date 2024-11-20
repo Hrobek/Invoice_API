@@ -43,15 +43,15 @@ public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
     }
 
 
-    public IList<PersonDto> GetAll()
+    public override IList<PersonDto> GetAll()
     {
         IList<Person> persons = personRepository.GetAllByHidden(false);
         return mapper.Map<IList<PersonDto>>(persons);
     }
 
-    public PersonDto? Get(uint personId)
+    public override PersonDto? Get(ulong Id)
     {
-        Person? person = personRepository.FindById(personId);
+        Person? person = personRepository.FindById(Id);
 
         if (person is null)
         {
@@ -61,7 +61,7 @@ public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
         return mapper.Map<PersonDto>(person);
     }
 
-    public PersonDto Add(PersonDto personDto)
+    public override PersonDto Add(PersonDto personDto)
     {
         Person person = mapper.Map<Person>(personDto);
         person.Id = default;
@@ -70,13 +70,13 @@ public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
         return mapper.Map<PersonDto>(addedPerson);
     }
 
-    public PersonDto? Update(uint personId, PersonDto updatedPersonDto)
+    public PersonDto? Update(uint Id, PersonDto updatedPersonDto)
     {
         /*var existingPerson = personRepository.FindById(personId);
 
         updatedPersonDto.IdentificationNumber = existingPerson.IdentificationNumber;*/
 
-        HidePerson(personId);
+        HidePerson(Id);
 
         Person person = mapper.Map<Person>(updatedPersonDto);
         person.Id = default;

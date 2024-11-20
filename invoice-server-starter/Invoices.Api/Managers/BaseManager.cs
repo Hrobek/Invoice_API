@@ -12,8 +12,7 @@ namespace Invoices.Api.Managers
         private readonly IBaseRepository<TEntity> repository;
         private readonly IMapper mapper;
 
-
-        public IList<TDto> GetAll()
+        public virtual IList<TDto> GetAll()
         {
             var entities = repository.GetAll();
             return mapper.Map<IList<TDto>>(entities);

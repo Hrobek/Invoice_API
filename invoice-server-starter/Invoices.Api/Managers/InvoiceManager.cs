@@ -5,6 +5,8 @@ using Invoices.Data;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
 using Invoices.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Invoices.Api.Managers
 {
@@ -18,16 +20,52 @@ namespace Invoices.Api.Managers
             this.invoiceRepository = invoiceRepository;
             this.mapper = mapper;
         }
-        public IList<InvoiceDto> GetAll()
+        public IList<InvoiceDto> GetAll(InvoiceFilterDto? invoiceFilterDto = null)
         {
-            var entities = invoiceRepository.GetAll();
-            return mapper.Map<IList<InvoiceDto>>(entities);
+            IList<Invoice> invoices = invoiceFilterDto is null ?
+               invoiceRepository.GetAll() :
+               invoiceRepository.GetAll(
+                   invoiceFilterDto.sellerId,
+                   invoiceFilterDto.buyerId,
+                   invoiceFilterDto.product,
+                   invoiceFilterDto.minPrice ?? int.MinValue,
+                    invoiceFilterDto.maxPrice ?? int.MaxValue,
+                    invoiceFilterDto.limit ?? int.MaxValue
+                   );
+
+            return mapper.Map<IList<InvoiceDto>>(invoices);
+        }
+
+        public override InvoiceDto? Get(ulong Id)
+        {
+            Invoice? invoice = invoiceRepository.FindById(Id);
+
+            if (invoice is null)
+            {
+                return null;
+            }
+
+            return mapper.Map<InvoiceDto>(invoice);
+        }
+        public List<InvoiceDto> GetByIdentificationNumber(string identificationNumber, bool isSeller)
+        {
+            var invoices = invoiceRepository
+                .GetAll() 
+                .Where(i => isSeller ? i.Seller?.IdentificationNumber == identificationNumber : i.Buyer?.IdentificationNumber == identificationNumber)
+                .ToList();
+
+            if (!invoices.Any())
+            {
+                return new List<InvoiceDto>();
+            }
+
+            return invoices.Select(invoice => mapper.Map<InvoiceDto>(invoice)).ToList();
+
         }
         public override InvoiceDto Add(InvoiceDto invoiceDto)
         {
             Invoice invoice = mapper.Map<Invoice>(invoiceDto);
             invoice.Id = default;
-
             Invoice addedInvoice = invoiceRepository.Insert(invoice);
 
             Invoice? found = invoiceRepository.FindById(invoice.Id);

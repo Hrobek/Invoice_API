@@ -11,6 +11,13 @@ namespace Invoices.Data.Interfaces
 {
     public interface IInvoiceRepository :IBaseRepository<Invoice>
     {
-       
+        IList<Invoice> GetAll(
+             uint? sellerId = null,
+             uint? buyerId = null,
+             string? product = null,
+             decimal? minPrice = null,
+             decimal? maxPrice = null,
+             int? limit = null);
+
     }
 }

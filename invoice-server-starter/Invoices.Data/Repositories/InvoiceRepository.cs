@@ -14,12 +14,36 @@ namespace Invoices.Data.Repositories
         {
 
         }
-        public override IList<Invoice> GetAll()
+        public IList<Invoice> GetAll(
+            uint? sellerId = null,
+            uint? buyerId = null,
+            string? product = null,
+            decimal? minPrice = null,
+            decimal? maxPrice = null,
+            int? limit = null)
         {
-            return dbSet
+            IQueryable<Invoice> query = dbSet
                 .Include(i => i.Seller)
-                .Include(i => i.Buyer)
-                .ToList();
+                .Include(i => i.Buyer);
+
+            if (sellerId is not null)
+                query = query.Where(i => i.SellerId == sellerId);
+
+            if (buyerId is not null)
+                query = query.Where(i => i.BuyerId == buyerId);
+            if (product is not null)
+                query = query.Where(i => i.Product == product);
+
+            if (minPrice is not null)
+                query = query.Where(i => i.Price >= minPrice.Value);
+
+            if (maxPrice is not null)
+                query = query.Where(i => i.Price <= maxPrice.Value);
+
+            if (limit is not null && limit >= 0)
+                query = query.Take(limit.Value);
+
+            return query.ToList();
         }
 
         public override Invoice? FindById(ulong id)

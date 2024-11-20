@@ -5,6 +5,7 @@ namespace Invoices.Api.Interfaces
 {
     public interface IInvoiceManager : IBaseManager<InvoiceDto, Invoice>
     {
-     
+        public IList<InvoiceDto> GetAll(InvoiceFilterDto? invoiceFilterDto = null);
+        List<InvoiceDto> GetByIdentificationNumber(string identificationNumber, bool isSeller);
     }
 }
