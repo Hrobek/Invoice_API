@@ -66,5 +66,13 @@ namespace Invoices.Api.Controllers
                 return NotFound();
             return NoContent();
         }
+
+        [HttpGet("statistics")]
+        public async Task<ActionResult<InvoiceStatisticDto>> GetInvoiceStatistics()
+        {
+            var statistics = await invoiceManager.GetInvoiceStatistics();
+
+            return Ok(statistics);
+        }
     }
 }

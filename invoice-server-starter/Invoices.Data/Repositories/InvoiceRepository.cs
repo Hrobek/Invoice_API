@@ -15,8 +15,8 @@ namespace Invoices.Data.Repositories
 
         }
         public IList<Invoice> GetAll(
-            uint? sellerId = null,
-            uint? buyerId = null,
+            ulong? sellerId = null,
+            ulong? buyerId = null,
             string? product = null,
             decimal? minPrice = null,
             decimal? maxPrice = null,
@@ -52,6 +52,25 @@ namespace Invoices.Data.Repositories
                 .Include(i => i.Seller)
                 .Include(i => i.Buyer)
                 .FirstOrDefault(i => i.Id == id);
+        }
+
+        public async Task<long> GetCurrentYearSumAsync(int year)
+        {
+            return await invoicesDbContext.Invoices
+                .Where(i => i.Date.Year == year)
+                .SumAsync(i => i.Price);
+        }
+
+        public async Task<long> GetAllTimeSumAsync()
+        {
+            return await invoicesDbContext.Invoices
+                .SumAsync(i => i.Price);
+        }
+
+        public async Task<int> GetInvoicesCountAsync()
+        {
+            return await invoicesDbContext.Invoices
+                .CountAsync();
         }
     }
 }

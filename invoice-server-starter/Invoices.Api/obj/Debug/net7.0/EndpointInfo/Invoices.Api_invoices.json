@@ -60,7 +60,7 @@
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           },
           {
@@ -68,7 +68,7 @@
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           },
           {
@@ -249,6 +249,35 @@
         }
       }
     },
+    "/api/Invoices/statistics": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceStatisticDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceStatisticDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceStatisticDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "tags": [
@@ -418,6 +447,44 @@
           }
         }
       }
+    },
+    "/api/Persons/statistics": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonStatisticsDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonStatisticsDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonStatisticsDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -434,7 +501,7 @@
         "properties": {
           "_id": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           "invoiceNumber": {
             "type": "integer",
@@ -479,6 +546,24 @@
           "note": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceStatisticDto": {
+        "type": "object",
+        "properties": {
+          "currentYearSum": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "allTimeSum": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "invoicesCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -620,6 +705,24 @@
           },
           "country": {
             "$ref": "#/components/schemas/Country"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonStatisticsDto": {
+        "type": "object",
+        "properties": {
+          "personId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "personName": {
+            "type": "string",
+            "nullable": true
+          },
+          "revenue": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

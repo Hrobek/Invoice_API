@@ -59,12 +59,12 @@
     "Parameters": [
       {
         "Name": "sellerId",
-        "Type": "System.Nullable\u00601[[System.UInt32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Nullable\u00601[[System.UInt64, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
         "Name": "buyerId",
-        "Type": "System.Nullable\u00601[[System.UInt32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Nullable\u00601[[System.UInt64, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -170,6 +170,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "GetInvoiceStatistics",
+    "RelativePath": "api/Invoices/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Invoices.Api.Models.InvoiceStatisticDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Invoices.Api.Controllers.PersonsController",
     "Method": "GetPersons",
     "RelativePath": "api/Persons",
@@ -257,5 +277,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.PersonsController",
+    "Method": "GetPersonStatistics",
+    "RelativePath": "api/Persons/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Invoices.Api.Models.PersonStatisticsDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

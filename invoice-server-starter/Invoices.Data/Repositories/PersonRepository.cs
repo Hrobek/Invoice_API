@@ -22,6 +22,7 @@
 
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Invoices.Data.Repositories;
 
@@ -37,5 +38,18 @@ public class PersonRepository : BaseRepository<Person>, IPersonRepository
         return dbSet
             .Where(p => p.Hidden == hidden)
             .ToList();
+    }
+    public async Task<List<(ulong Id, string PersonName, decimal Revenue)>> GetPersonStatisticsAsync()
+    {
+        // Skupinová agregace dat
+        return await invoicesDbContext.Invoices
+            .Where(i => i.Seller != null)
+            .GroupBy(i => new { i.Seller.Id, i.Seller.Name })
+            .Select(g => new ValueTuple<ulong, string, decimal>(
+                g.Key.Id,
+                g.Key.Name,
+                g.Sum(i => i.Price)
+            ))
+            .ToListAsync();
     }
 }

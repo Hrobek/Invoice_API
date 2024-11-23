@@ -27,5 +27,5 @@ namespace Invoices.Api.Interfaces;
 
 public interface IPersonManager : IBaseManager<PersonDto,Person>
 {
-    
+    Task<List<PersonStatisticsDto>> GetPersonStatisticsAsync();
 }

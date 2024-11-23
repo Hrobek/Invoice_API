@@ -5,6 +5,7 @@ using Invoices.Data;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
 using Invoices.Data.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -60,7 +61,6 @@ namespace Invoices.Api.Managers
             }
 
             return invoices.Select(invoice => mapper.Map<InvoiceDto>(invoice)).ToList();
-
         }
         public override InvoiceDto Add(InvoiceDto invoiceDto)
         {
@@ -94,6 +94,22 @@ namespace Invoices.Api.Managers
             invoiceRepository.Delete(Id);
 
             return invoiceDto;
+        }
+
+        public async Task<InvoiceStatisticDto> GetInvoiceStatistics()
+        {
+            int currentYear = DateTime.Now.Year;
+
+            var currentYearSum = await invoiceRepository.GetCurrentYearSumAsync(currentYear);
+            var allTimeSum = await invoiceRepository.GetAllTimeSumAsync();
+            var invoicesCount = await invoiceRepository.GetInvoicesCountAsync();
+
+            return new InvoiceStatisticDto
+            {
+                CurrentYearSum = currentYearSum,
+                AllTimeSum = allTimeSum,
+                InvoicesCount = invoicesCount
+            };
         }
     }
 }

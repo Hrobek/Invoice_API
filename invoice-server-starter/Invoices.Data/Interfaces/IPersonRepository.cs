@@ -27,4 +27,5 @@ namespace Invoices.Data.Interfaces;
 public interface IPersonRepository : IBaseRepository<Person>
 {
     IList<Person> GetAllByHidden(bool hidden);
+    Task<List<(ulong Id, string PersonName, decimal Revenue)>> GetPersonStatisticsAsync();
 }

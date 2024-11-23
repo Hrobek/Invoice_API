@@ -8,7 +8,7 @@ namespace Invoices.Api.Models
     public class InvoiceDto
     {
         [JsonPropertyName("_id")]
-        public uint Id { get; set; }
+        public ulong Id { get; set; }
         public ulong InvoiceNumber { get; set; }
         public Person? Buyer { get; set; }
         public ulong ? BuyerId { get; set; }

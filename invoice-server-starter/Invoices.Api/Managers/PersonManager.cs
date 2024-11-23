@@ -101,4 +101,20 @@ public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
         person.Hidden = true;
         return personRepository.Update(person);
     }
+
+    public async Task<List<PersonStatisticsDto>> GetPersonStatisticsAsync()
+    {
+        // Získání dat z repository
+        var rawStatistics = await personRepository.GetPersonStatisticsAsync();
+
+        // Mapování na DTO
+        var statisticsDto = rawStatistics.Select(r => new PersonStatisticsDto
+        {
+            PersonId = r.Id,
+            PersonName = r.PersonName,
+            Revenue = r.Revenue
+        }).ToList();
+
+        return statisticsDto;
+    }
 }

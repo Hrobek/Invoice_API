@@ -12,12 +12,15 @@ namespace Invoices.Data.Interfaces
     public interface IInvoiceRepository :IBaseRepository<Invoice>
     {
         IList<Invoice> GetAll(
-             uint? sellerId = null,
-             uint? buyerId = null,
+             ulong? sellerId = null,
+             ulong? buyerId = null,
              string? product = null,
              decimal? minPrice = null,
              decimal? maxPrice = null,
              int? limit = null);
-
+        Task<long> GetCurrentYearSumAsync(int year);
+        Task<long> GetAllTimeSumAsync();
+        Task<int> GetInvoicesCountAsync();
     }
+
 }

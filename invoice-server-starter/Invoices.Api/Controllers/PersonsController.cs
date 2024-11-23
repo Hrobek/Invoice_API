@@ -21,6 +21,7 @@
  */
 
 using Invoices.Api.Interfaces;
+using Invoices.Api.Managers;
 using Invoices.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,7 +46,7 @@ public class PersonsController : ControllerBase
         return personManager.GetAll();
     }
 
-    // api/persons/1
+
     [HttpGet("{Id}")]
     public IActionResult GetPerson(ulong Id)
     {
@@ -77,5 +78,12 @@ public class PersonsController : ControllerBase
     {
         personManager.Delete(Id);
         return NoContent();
+    }
+
+    [HttpGet("statistics")]
+    public async Task<ActionResult<List<PersonStatisticsDto>>> GetPersonStatistics()
+    {
+        var statistics = await personManager.GetPersonStatisticsAsync();
+        return Ok(statistics);
     }
 }
