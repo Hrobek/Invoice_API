@@ -36,7 +36,6 @@ namespace Invoices.Api.Managers
 
             return mapper.Map<IList<InvoiceDto>>(invoices);
         }
-
         public override InvoiceDto? Get(ulong Id)
         {
             Invoice? invoice = invoiceRepository.FindById(Id);
@@ -68,7 +67,7 @@ namespace Invoices.Api.Managers
             invoice.Id = default;
             Invoice addedInvoice = invoiceRepository.Insert(invoice);
 
-            Invoice? found = invoiceRepository.FindById(invoice.Id);
+            Invoice? found = invoiceRepository.FindById(addedInvoice.Id);
 
             return mapper.Map<InvoiceDto>(found);
         }
@@ -109,6 +108,23 @@ namespace Invoices.Api.Managers
                 CurrentYearSum = currentYearSum,
                 AllTimeSum = allTimeSum,
                 InvoicesCount = invoicesCount
+            };
+        }
+
+        public InvoiceResponseDto MapToResponseDto(InvoiceDto invoice)
+        {
+            return new InvoiceResponseDto
+            {
+                Id = invoice.Id,
+                InvoiceNumber = invoice.InvoiceNumber,
+                Buyer = invoice.Buyer,
+                Seller = invoice.Seller,
+                Issued = invoice.Issued,
+                Date = invoice.Date,
+                Product = invoice.Product,
+                Price = invoice.Price,
+                Vat = invoice.Vat,
+                Note = invoice.Note
             };
         }
     }

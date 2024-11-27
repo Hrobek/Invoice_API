@@ -21,9 +21,11 @@ namespace Invoices.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<InvoiceDto> GetInvoices([FromQuery] InvoiceFilterDto invoiceFilter)
+        public IEnumerable<InvoiceResponseDto> GetInvoices([FromQuery] InvoiceFilterDto invoiceFilter)
         {
-            return invoiceManager.GetAll(invoiceFilter);
+            IEnumerable<InvoiceDto> invoices = invoiceManager.GetAll(invoiceFilter);
+
+            return invoices.Select(invoiceManager.MapToResponseDto);
         }
 
         [HttpGet("{Id}")]
@@ -35,26 +37,26 @@ namespace Invoices.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok(invoice);
+            return Ok(invoiceManager.MapToResponseDto(invoice));
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddInvoice([FromBody] InvoiceDto invoiceDto)
+        public IActionResult AddInvoice([FromBody] InvoiceDto invoiceDto)
         {
             InvoiceDto? createdInvoice = invoiceManager.Add(invoiceDto);
 
-            return StatusCode(StatusCodes.Status201Created, createdInvoice);
+            return StatusCode(StatusCodes.Status201Created, invoiceManager.MapToResponseDto(createdInvoice));
 
         }
 
         [HttpPut("{Id}")]
-        public IActionResult EditInvoice(ulong Id, [FromBody] InvoiceDto invoice)
+        public IActionResult UpdateInvoice(ulong Id, [FromBody] InvoiceDto invoice)
         {
             InvoiceDto? updatedInvoice = invoiceManager.Update(Id, invoice);
 
             if (updatedInvoice is null)
                 return NotFound();
-            return Ok(updatedInvoice);
+            return Ok(invoiceManager.MapToResponseDto(updatedInvoice));
         }
 
         [HttpDelete("{Id}")]
@@ -74,5 +76,7 @@ namespace Invoices.Api.Controllers
 
             return Ok(statistics);
         }
+
+       
     }
 }

@@ -19,25 +19,31 @@ namespace Invoices.Api.Controllers
         [HttpGet("{identificationNumber}/sales")]
         public IActionResult GetByInSeller(string identificationNumber)
         {
-            var invoice = invoiceManager.GetByIdentificationNumber(identificationNumber,true);
+            var invoices = invoiceManager.GetByIdentificationNumber(identificationNumber, true);
 
-            if (invoice is null)
+            if (invoices == null || !invoices.Any())
             {
                 return NotFound();
             }
-            return Ok(invoice);
+
+            // Mapování na response DTO
+            var response = invoices.Select(invoiceManager.MapToResponseDto);
+            return Ok(response);
         }
 
         [HttpGet("{identificationNumber}/purchases")]
         public IActionResult GetByInBuyer(string identificationNumber)
         {
-            var invoice = invoiceManager.GetByIdentificationNumber(identificationNumber, false);
+            var invoices = invoiceManager.GetByIdentificationNumber(identificationNumber, false);
 
-            if (invoice is null)
+            if (invoices == null || !invoices.Any())
             {
                 return NotFound();
             }
-            return Ok(invoice);
+
+            // Mapování na response DTO
+            var response = invoices.Select(invoiceManager.MapToResponseDto);
+            return Ok(response);
         }
     }
 }

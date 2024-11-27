@@ -90,7 +90,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Invoices.Api.Models.InvoiceDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Invoices.Api.Models.InvoiceResponseDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -134,7 +134,7 @@
   },
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
-    "Method": "EditInvoice",
+    "Method": "UpdateInvoice",
     "RelativePath": "api/Invoices/{Id}",
     "HttpMethod": "PUT",
     "IsController": true,

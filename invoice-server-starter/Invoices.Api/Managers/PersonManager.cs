@@ -70,7 +70,7 @@ public class PersonManager : BaseManager<PersonDto, Person>,IPersonManager
         return mapper.Map<PersonDto>(addedPerson);
     }
 
-    public PersonDto? Update(uint Id, PersonDto updatedPersonDto)
+    public PersonDto? Update(ulong Id, PersonDto updatedPersonDto)
     {
         /*var existingPerson = personRepository.FindById(personId);
 

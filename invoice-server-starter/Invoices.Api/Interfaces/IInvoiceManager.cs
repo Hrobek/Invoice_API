@@ -8,5 +8,6 @@ namespace Invoices.Api.Interfaces
         public IList<InvoiceDto> GetAll(InvoiceFilterDto? invoiceFilterDto = null);
         List<InvoiceDto> GetByIdentificationNumber(string identificationNumber, bool isSeller);
         Task<InvoiceStatisticDto> GetInvoiceStatistics();
+        InvoiceResponseDto MapToResponseDto(InvoiceDto invoice);
     }
 }

@@ -30,12 +30,8 @@ public class AutomapperConfigurationProfile : Profile
 {
     public AutomapperConfigurationProfile()
     {
-
-        CreateMap<Invoice, InvoiceDto>()
-            .ReverseMap()
-            .ForMember(dest => dest.Seller, opt => opt.Ignore())
-            .ForMember(dest => dest.Buyer, opt => opt.Ignore());
-        CreateMap<InvoiceDto,Invoice>();
+        CreateMap<Invoice, InvoiceDto>();
+        CreateMap<InvoiceDto, Invoice>();
         CreateMap<Person, PersonDto>();
         CreateMap<PersonDto, Person>();
     }

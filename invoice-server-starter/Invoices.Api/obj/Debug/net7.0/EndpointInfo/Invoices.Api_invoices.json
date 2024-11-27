@@ -111,7 +111,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/InvoiceDto"
+                    "$ref": "#/components/schemas/InvoiceResponseDto"
                   }
                 }
               },
@@ -119,7 +119,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/InvoiceDto"
+                    "$ref": "#/components/schemas/InvoiceResponseDto"
                   }
                 }
               },
@@ -127,7 +127,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/InvoiceDto"
+                    "$ref": "#/components/schemas/InvoiceResponseDto"
                   }
                 }
               }
@@ -508,7 +508,7 @@
             "format": "int64"
           },
           "buyer": {
-            "$ref": "#/components/schemas/Person"
+            "$ref": "#/components/schemas/PersonDto"
           },
           "buyerId": {
             "type": "integer",
@@ -516,12 +516,56 @@
             "nullable": true
           },
           "seller": {
-            "$ref": "#/components/schemas/Person"
+            "$ref": "#/components/schemas/PersonDto"
           },
           "sellerId": {
             "type": "integer",
             "format": "int64",
             "nullable": true
+          },
+          "issued": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "product": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceResponseDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "invoiceNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "buyer": {
+            "$ref": "#/components/schemas/PersonDto"
+          },
+          "seller": {
+            "$ref": "#/components/schemas/PersonDto"
           },
           "issued": {
             "type": "string",
@@ -564,86 +608,6 @@
           "invoicesCount": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Person": {
-        "required": [
-          "accountNumber",
-          "bankCode",
-          "city",
-          "country",
-          "hidden",
-          "iban",
-          "identificationNumber",
-          "mail",
-          "name",
-          "note",
-          "street",
-          "taxNumber",
-          "telephone",
-          "zip"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "identificationNumber": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "taxNumber": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "accountNumber": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "bankCode": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "iban": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "telephone": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "mail": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "street": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "zip": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "city": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "note": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "country": {
-            "$ref": "#/components/schemas/Country"
-          },
-          "hidden": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

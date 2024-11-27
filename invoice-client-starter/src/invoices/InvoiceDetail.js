@@ -24,60 +24,73 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
-import Country from "./Country";
 
-const PersonDetail = () => {
+const InvoiceDetail = () => {
     const {id} = useParams();
-    const [person, setPerson] = useState({});
+    const [invoice, setInvoice] = useState({});
 
     useEffect(() => {
+        apiGet("/api/persons") // Replace with your actual endpoint to fetch persons
+            .then((data) => setPersons(data))
+            .catch((error) => {
+                console.log(error);
+                setError("Failed to load persons");
+            });
         if (id) {
-            apiGet("/api/persons/" + id).then((data) => setPerson(data));
+            apiGet("/api/invoices/" + id).then((data) => setInvoice(data));
         }
         // TODO: Add HTTP req.
     }, [id]);
-    const country = Country.CZECHIA === person.country ? "Česká republika" : "Slovensko";
 
     return (
         <>
             <div>
-                <h1>Detail osoby</h1>
+                <h1>Detail faktury</h1>
                 <hr/>
-                <h3>{person.name} ({person.identificationNumber})</h3>
+                <h3>{invoice.invoiceNumber}</h3>
                 <p>
-                    <strong>DIČ:</strong>
+                    <strong>Dodavatel:</strong>
                     <br/>
-                    {person.taxNumber}
+                    {invoice.seller?.name} ({invoice.seller?.identificationNumber})
                 </p>
                 <p>
-                    <strong>Bankovní účet:</strong>
+                    <strong>Odběratel:</strong>
                     <br/>
-                    {person.accountNumber}/{person.bankCode} ({person.iban})
+                    {invoice.buyer?.name} ({invoice.buyer?.identificationNumber})
                 </p>
                 <p>
-                    <strong>Tel.:</strong>
+                    <strong>Vytvořeno:</strong>
                     <br/>
-                    {person.telephone}
+                    {invoice.issued? new Date(invoice.date).toLocaleDateString("cs-CZ") : "Neuvedeno"}
                 </p>
                 <p>
-                    <strong>Mail:</strong>
+                    <strong>Splatnost:</strong>
                     <br/>
-                    {person.mail}
+                    {invoice.date? new Date(invoice.date).toLocaleDateString("cs-CZ") : "Neuvedeno"}
                 </p>
                 <p>
-                    <strong>Sídlo:</strong>
+                    <strong>Produkt:</strong>
                     <br/>
-                    {person.street}, {person.city},
-                    {person.zip}, {country}
+                    {invoice.product}
+                </p>
+                <p>
+                    <strong>Cena:</strong>
+                    <br/>
+                    {invoice.price} Kč
+                </p>
+                <p>
+                    <strong>DPH:</strong>
+                    <br/>
+                    {invoice.vat}%
                 </p>
                 <p>
                     <strong>Poznámka:</strong>
                     <br/>
-                    {person.note}
+                    {invoice.note}
                 </p>
             </div>
         </>
     );
 };
 
-export default PersonDetail;
+export default InvoiceDetail;
