@@ -5,7 +5,7 @@ export function InputSelect(props) {
   const required = props.required || false;
 
   // příznak označení prázdné hodnoty
-  const emptySelected = multiple ? props.value?.length === 0 : !props.value;
+  const emptySelected = multiple ? props.value.length === 0 : !props.value;
   // příznak objektové struktury položek
   const objectItems = props.enum ? false : true;
 
@@ -35,13 +35,19 @@ export function InputSelect(props) {
         {objectItems
           ? /* vykreslení položek jako objektů z databáze (osobnosti) */
             props.items.map((item, index) => (
-              <option key={required ? index : index + 1} value={item._id}>
+              <option
+                key={required ? index : index + 1}
+                value={item._id}
+              >
                 {item.name}
               </option>
             ))
           : /* vykreslení položek jako hodnot z výčtu (žánry) */
             props.items.map((item, index) => (
-              <option key={required ? index : index + 1} value={item}>
+              <option
+                key={required ? index : index + 1}
+                value={item}
+              >
                 {props.enum[item]}
               </option>
             ))}

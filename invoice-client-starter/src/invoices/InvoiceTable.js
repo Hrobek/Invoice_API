@@ -22,12 +22,14 @@
 
 import React from "react";
 import {Link} from "react-router-dom";
+import InvoiceStatistic from "./InvoiceStatistic";
 
 const InvoiceTable = ({label, items, deleteInvoice}) => {
     return (
         <div>
+            <InvoiceStatistic/>
             <p>
-                {label} {items.length}
+                <strong>{label}</strong> {items.length}
             </p>
 
             <table className="table table-bordered">

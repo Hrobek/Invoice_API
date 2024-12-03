@@ -52,6 +52,7 @@ namespace Invoices.Api.Controllers
         [HttpPut("{Id}")]
         public IActionResult UpdateInvoice(ulong Id, [FromBody] InvoiceDto invoice)
         {
+          
             InvoiceDto? updatedInvoice = invoiceManager.Update(Id, invoice);
 
             if (updatedInvoice is null)

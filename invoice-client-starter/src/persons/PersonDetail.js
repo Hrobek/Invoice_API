@@ -25,6 +25,8 @@ import {useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
 import Country from "./Country";
+import IdentificationNumberTable from "../invoices/IdentificationNumberTable";
+import IdentificationNumberPurchasesTable from "../invoices/IdentifacitonNumberPurchasesTable";
 
 const PersonDetail = () => {
     const {id} = useParams();
@@ -40,14 +42,14 @@ const PersonDetail = () => {
 
     return (
         <>
-            <div>
-                <h1>Detail osoby</h1>
+            <div className="mt-3 container p-3 bg-light border text-left">
+                <h1 className="text-center">Detail osoby</h1>
                 <hr/>
-                <h3>{person.name} ({person.identificationNumber})</h3>
+                <h3>{person.name}</h3>
+
+                
                 <p>
-                    <strong>DIČ:</strong>
-                    <br/>
-                    {person.taxNumber}
+                    <strong>IČO:</strong> {person.identificationNumber} <strong>DIČ:</strong> {person.taxNumber}
                 </p>
                 <p>
                     <strong>Bankovní účet:</strong>
@@ -55,26 +57,37 @@ const PersonDetail = () => {
                     {person.accountNumber}/{person.bankCode} ({person.iban})
                 </p>
                 <p>
-                    <strong>Tel.:</strong>
+                    <strong>Tel. číslo:</strong>
                     <br/>
                     {person.telephone}
                 </p>
                 <p>
-                    <strong>Mail:</strong>
+                    <strong>Email:</strong>
                     <br/>
                     {person.mail}
                 </p>
                 <p>
                     <strong>Sídlo:</strong>
                     <br/>
-                    {person.street}, {person.city},
-                    {person.zip}, {country}
+                    <div>{person.street}</div> 
+                    <div>{person.city} {person.zip}</div>
+                    <div>{country}</div>
                 </p>
                 <p>
                     <strong>Poznámka:</strong>
                     <br/>
                     {person.note}
                 </p>
+            </div>
+            <div className="row mt-3">
+                <div className="col-md-6">              
+                <IdentificationNumberTable 
+                    identificationNumber={person.identificationNumber}/>
+                </div>
+                <div className="col-md-6">
+                    <IdentificationNumberPurchasesTable
+                    identificationNumber={person.identificationNumber}/>
+                </div>
             </div>
         </>
     );
