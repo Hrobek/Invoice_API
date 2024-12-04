@@ -14,7 +14,8 @@ const InvoiceStatistic = () => {
     <div>
       <div className='row'>
         <div className='col-md-4'><strong>Bilance za tento rok:</strong> {statistics.currentYearSum} Kč</div>
-        <div className='col-md-6'><strong>Bilance za celé období: </strong>{statistics.allTimeSum} Kč</div>
+        <div className='col-md-4'><strong>Bilance za celé období: </strong>{statistics.allTimeSum} Kč</div>
+        <div className='col-md-4'><strong>Počet faktur: </strong>{statistics.invoicesCount}</div>
       </div>
     </div>
   );

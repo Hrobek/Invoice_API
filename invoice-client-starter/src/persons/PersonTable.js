@@ -20,10 +20,22 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import React from "react";
+import ReactPaginate from "react-paginate";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 const PersonTable = ({label, items, deletePerson}) => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 10;
+
+    // Výpočet aktuálních položek
+    const offset = currentPage * itemsPerPage;
+    const currentItems = items.slice(offset, offset + itemsPerPage);
+    const pageCount = Math.ceil(items.length / itemsPerPage);
+
+    const handlePageClick = ({ selected }) => {
+        setCurrentPage(selected);
+    }
     return (
         <div>
             <p>
@@ -39,9 +51,9 @@ const PersonTable = ({label, items, deletePerson}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {items.map((item, index) => (
-                    <tr key={index + 1}>
-                        <td>{index + 1}</td>
+                {currentItems.map((item, index) => (
+                    <tr key={index + offset + 1}>
+                        <td>{index + 1 + offset}</td>
                         <td>{item.name}</td>
                         <td>
                             <div className="btn-group">
@@ -69,6 +81,27 @@ const PersonTable = ({label, items, deletePerson}) => {
                 ))}
                 </tbody>
             </table>
+            {items.length > itemsPerPage && (
+            <ReactPaginate
+                previousLabel={"Předchozí"}
+                nextLabel={"Další"}
+                breakLabel={"..."}
+                breakClassName={"page-item"}
+                breakLinkClassName={"page-link"}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClick}
+                containerClassName={"pagination justify-content-center"}
+                pageClassName={"page-item"}
+                pageLinkClassName={"page-link"}
+                previousClassName={"page-item"}
+                previousLinkClassName={"page-link"}
+                nextClassName={"page-item"}
+                nextLinkClassName={"page-link"}
+                activeClassName={"active"}
+            />
+            )}
             <Link to={"/persons/create"} className="btn btn-success">
                 Nová osoba
             </Link>

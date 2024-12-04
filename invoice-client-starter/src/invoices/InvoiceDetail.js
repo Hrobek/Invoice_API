@@ -21,10 +21,11 @@
  */
 
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
 import { dateStringFormatter } from "../utils/dateStringFormatter";
+import PersonDetailTable from "../persons/PersonDetailTable";
 
 const InvoiceDetail = () => {
     const {id} = useParams();
@@ -60,61 +61,25 @@ const InvoiceDetail = () => {
                 <div className="container mt-5">
                     <div className="row">
                         <div className="col-md-6 nameContainer p-3 bg-light border text-left">
-                            <p>
-                                <strong>Dodavatel:</strong>
-                                <br/>
-                                {invoice.seller?.name}
-                            </p>
-                            <p>
-                                <strong>IČ:</strong> {invoice.seller?.identificationNumber} <strong>DIČ:</strong> {invoice.seller?.taxNumber}
-                            </p>
-                            <p>
-                                <strong>Číslo účtu:</strong> {invoice.seller?.accountNumber}/{invoice.seller?.bankCode}
-                            </p>
-                            <p>
-                                <strong>IBAN:</strong> {invoice.seller?.iban}
-                            </p>
-                            <p>
-                                <strong>Tel. číslo:</strong> {invoice.seller?.telephone}
-                            </p>
-                            <p>
-                                <strong>Email:</strong> {invoice.seller?.mail}
-                            </p>
-                            <p>
-                                <strong>Ulice:</strong> {invoice.seller?.street}
-                            </p>
-                            <p>
-                                <strong>Město:</strong> {invoice.seller?.city} {invoice.seller?.zip}
-                            </p>
+                            <PersonDetailTable
+                            id={invoice.seller?._id}/>
+                            <Link
+                                    to={`/persons/show/${invoice.seller?._id}`}
+                                    className="btn btn-sm btn-secondary"
+                                >
+                                    Zobrazit
+                                </Link>
                         </div>
         
                             <div class="col-md-6 nameContainer p-3 bg-light border text-left">
-                                <p>
-                                    <strong>Odběratel:</strong>
-                                    <br/>
-                                    {invoice.buyer?.name}
-                                </p>
-                                <p>
-                                    <strong>IČ:</strong> {invoice.buyer?.identificationNumber} <strong>DIČ:</strong> {invoice.buyer?.taxNumber}
-                                </p>
-                                <p>
-                                    <strong>Číslo účtu:</strong> {invoice.buyer?.accountNumber}/{invoice.buyer?.bankCode}
-                                </p>
-                                <p>
-                                    <strong>IBAN:</strong> {invoice.buyer?.iban}
-                                </p>
-                                <p>
-                                    <strong>Tel. číslo:</strong> {invoice.buyer?.telephone}
-                                </p>
-                                <p>
-                                    <strong>Email:</strong> {invoice.buyer?.mail}
-                                </p>
-                                <p>
-                                    <strong>Ulice:</strong> {invoice.buyer?.street}
-                                </p>
-                                <p>
-                                    <strong>Město:</strong> {invoice.buyer?.city} {invoice.buyer?.zip}
-                                </p>
+                                <PersonDetailTable
+                                id={invoice.buyer?._id}/>
+                                <Link
+                                    to={`/persons/show/${invoice.buyer?._id}`}
+                                    className="btn btn-sm btn-secondary"
+                                >
+                                    Zobrazit
+                                </Link>
                             </div>
                         </div>
                     </div>

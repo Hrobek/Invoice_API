@@ -37,7 +37,7 @@ import PersonForm from "./persons/PersonForm";
 import InvoiceIndex from "./invoices/InvoiceIndex";
 import InvoiceDetail from "./invoices/InvoiceDetail";
 import InvoiceForm from "./invoices/InvoiceForm";
-import PersonStatistics from "./persons/PersonStatistics";
+import PersonStatistics from "./statistics/PersonStatistics";
 
 export function App() {
   return (

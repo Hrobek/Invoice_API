@@ -52,6 +52,7 @@ const PersonForm = () => {
     const [sentState, setSent] = useState(false);
     const [successState, setSuccess] = useState(false);
     const [errorState, setError] = useState(null);
+    const isPutRequest =  Boolean(id);
 
     useEffect(() => {
         if (id) {
@@ -105,7 +106,6 @@ const PersonForm = () => {
                         setPerson({...person, name: e.target.value});
                     }}
                 />
-
                 <InputField
                     required={true}
                     type="text"
@@ -117,8 +117,8 @@ const PersonForm = () => {
                     handleChange={(e) => {
                         setPerson({...person, identificationNumber: e.target.value});
                     }}
+                    disabled={isPutRequest}
                 />
-
                 <InputField
                     required={true}
                     type="text"

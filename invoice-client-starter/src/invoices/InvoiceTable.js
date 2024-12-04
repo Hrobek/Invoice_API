@@ -20,19 +20,28 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import React from "react";
 import {Link} from "react-router-dom";
-import InvoiceStatistic from "./InvoiceStatistic";
+import InvoiceStatistic from "../statistics/InvoiceStatistic";
+import ReactPaginate from "react-paginate";
+import React, {useState} from "react";
 
-const InvoiceTable = ({label, items, deleteInvoice}) => {
+const InvoiceTable = ({items, deleteInvoice}) => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 10;
+
+    // Výpočet aktuálních položek
+    const offset = currentPage * itemsPerPage;
+    const currentItems = items.slice(offset, offset + itemsPerPage);
+    const pageCount = Math.ceil(items.length / itemsPerPage);
+
+    const handlePageClick = ({ selected }) => {
+        setCurrentPage(selected);
+    }
     return (
         <div>
             <InvoiceStatistic/>
-            <p>
-                <strong>{label}</strong> {items.length}
-            </p>
 
-            <table className="table table-bordered">
+            <table className="table table-bordered mt-3">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -41,9 +50,9 @@ const InvoiceTable = ({label, items, deleteInvoice}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {items.map((item, index) => (
-                    <tr key={index + 1}>
-                        <td>{index + 1}</td>
+                {currentItems.map((item, index) => (
+                    <tr key={index + offset + 1}>
+                        <td>{index + 1 + offset}</td>
                         <td>{item.invoiceNumber}</td>
                         <td>
                             <div className="btn-group">
@@ -71,6 +80,27 @@ const InvoiceTable = ({label, items, deleteInvoice}) => {
                 ))}
                 </tbody>
             </table>
+            {items.length > itemsPerPage && (
+            <ReactPaginate
+                previousLabel={"Předchozí"}
+                nextLabel={"Další"}
+                breakLabel={"..."}
+                breakClassName={"page-item"}
+                breakLinkClassName={"page-link"}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClick}
+                containerClassName={"pagination justify-content-center"}
+                pageClassName={"page-item"}
+                pageLinkClassName={"page-link"}
+                previousClassName={"page-item"}
+                previousLinkClassName={"page-link"}
+                nextClassName={"page-item"}
+                nextLinkClassName={"page-link"}
+                activeClassName={"active"}
+            />
+            )}
             <Link to={"/invoices/create"} className="btn btn-success">
                 Nová faktura
             </Link>

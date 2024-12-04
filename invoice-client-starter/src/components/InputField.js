@@ -8,6 +8,7 @@ export function InputField(props) {
   const type = props.type.toLowerCase();
   const isTextarea = type === "textarea";
   const required = props.required || false;
+  const disabled = props.disabled || false;
 
   if (!isTextarea && !INPUTS.includes(type)) {
     return null;
@@ -44,6 +45,7 @@ export function InputField(props) {
           min={min}
           name={props.name}
           value={props.value}
+          disabled={disabled}
           onChange={props.handleChange}
         />
       )}

@@ -25,12 +25,8 @@ import {useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
 import Country from "./Country";
-import SalesTable from "../invoices/SalesTable";
-import PurchasesTable from "../invoices/PurchasesTable";
-import PersonDetailTable from "./PersonDetailTable";
 
-const PersonDetail = () => {
-    const {id} = useParams();
+const PersonDetailTable = ({id}) => {
     const [person, setPerson] = useState({});
 
     useEffect(() => {
@@ -43,31 +39,44 @@ const PersonDetail = () => {
 
     return (
         <>
-            <div>
-            <div className="mt-3 container p-3 bg-light border text-left">
-                <PersonDetailTable
-                id = {person._id}/>
-            </div>
-            </div>
-            <button class="btn btn-success mb-3 mt-3 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample">
-                Přijaté faktury
-            </button>
-            <button class="btn btn-success mb-3 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample">
-                Vystavené faktury
-            </button>
-            <div className="row mt-3 " >
-                <div className="col-md-6 collapse" id="collapseOne">              
-                    <SalesTable 
-                    identificationNumber={person.identificationNumber}/>
-                </div>
-                <div className="col-md-6 collapse" id="collapseTwo">
-                    <PurchasesTable
-                    identificationNumber={person.identificationNumber}/>
-                </div>
-            </div>
+            
+                <h1 className="text-center">Detail osoby</h1>
+                <hr/>
+                <h3>{person.name}</h3>
 
+                
+                <p>
+                    <strong>IČO:</strong> {person.identificationNumber} <strong>DIČ:</strong> {person.taxNumber}
+                </p>
+                <p>
+                    <strong>Bankovní účet:</strong>
+                    <br/>
+                    {person.accountNumber}/{person.bankCode} ({person.iban})
+                </p>
+                <p>
+                    <strong>Tel. číslo:</strong>
+                    <br/>
+                    {person.telephone}
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                    <br/>
+                    {person.mail}
+                </p>
+                <p>
+                    <strong>Sídlo:</strong>
+                    <br/>
+                    <div>{person.street}</div> 
+                    <div>{person.city} {person.zip}</div>
+                    <div>{country}</div>
+                </p>
+                <p>
+                    <strong>Poznámka:</strong>
+                    <br/>
+                    {person.note}
+                </p>
         </>
     );
 };
 
-export default PersonDetail;
+export default PersonDetailTable;
