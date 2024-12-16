@@ -49,10 +49,10 @@ const PersonDetail = () => {
                 id = {person._id}/>
             </div>
             </div>
-            <button class="btn btn-success mb-3 mt-3 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample">
+            <button className="btn btn-secondary mb-3 mt-3 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample">
                 Přijaté faktury
             </button>
-            <button class="btn btn-success mb-3 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample">
+            <button className="btn btn-secondary mb-3 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample">
                 Vystavené faktury
             </button>
             <div className="row mt-3 " >

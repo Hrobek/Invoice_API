@@ -71,7 +71,7 @@ const InvoiceDetail = () => {
                                 </Link>
                         </div>
         
-                            <div class="col-md-6 nameContainer p-3 bg-light border text-left">
+                            <div className="col-md-6 nameContainer p-3 bg-light border text-left">
                                 <PersonDetailTable
                                 id={invoice.buyer?._id}/>
                                 <Link

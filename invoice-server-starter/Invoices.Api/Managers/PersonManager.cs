@@ -25,8 +25,6 @@ using Invoices.Api.Interfaces;
 using Invoices.Api.Models;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
-using Invoices.Data.Repositories;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Invoices.Api.Managers;
 

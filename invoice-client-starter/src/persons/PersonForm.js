@@ -67,7 +67,9 @@ const PersonForm = () => {
             .then((data) => {
                 setSent(true);
                 setSuccess(true);
-                navigate("/persons");
+                setTimeout(() => {
+                    navigate("/persons"); // Přesměrování po 3 sekundách
+                }, 1000);
             })
             .catch((error) => {
                 console.log(error.message);

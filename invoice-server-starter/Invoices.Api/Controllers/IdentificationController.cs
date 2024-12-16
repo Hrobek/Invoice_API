@@ -1,7 +1,4 @@
 ﻿using Invoices.Api.Interfaces;
-using Invoices.Api.Managers;
-using Invoices.Api.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Invoices.Api.Controllers

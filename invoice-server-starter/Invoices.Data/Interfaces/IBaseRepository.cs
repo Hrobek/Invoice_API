@@ -21,7 +21,6 @@
  */
 
 using Invoices.Data.Models;
-using System.Linq.Expressions;
 
 namespace Invoices.Data.Interfaces;
 

@@ -1,7 +1,7 @@
 
 import React, {useEffect, useState} from "react";
 
-import {apiDelete, apiGet} from "../utils/api";
+import {apiGet} from "../utils/api";
 
 import StatisticTable from "./StatisticTable";
 

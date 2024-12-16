@@ -71,7 +71,9 @@ const InvoiceForm = () => {
                 console.log('succcess', data)
                 setSent(true);
                 setSuccess(true);
-                navigate('/invoices')
+                setTimeout(() => {
+                    navigate("/invoices"); // Přesměrování po 3 sekundách
+                }, 1000);
 
             })
             .catch((error) => {
@@ -112,7 +114,7 @@ const InvoiceForm = () => {
             {sent && success ? (
                 <FlashMessage
                     theme={"success"}
-                    text={"Uložení filmu proběhlo úspěšně."}
+                    text={"Uložení faktury proběhlo úspěšně."}
                 />
             ): null}
 

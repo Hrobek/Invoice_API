@@ -21,7 +21,6 @@
  */
 
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
 import Country from "./Country";
@@ -39,7 +38,7 @@ const PersonDetailTable = ({id}) => {
 
     return (
         <>
-            
+            <div>
                 <h1 className="text-center">Detail osoby</h1>
                 <hr/>
                 <h3>{person.name}</h3>
@@ -63,18 +62,17 @@ const PersonDetailTable = ({id}) => {
                     <br/>
                     {person.mail}
                 </p>
-                <p>
                     <strong>Sídlo:</strong>
                     <br/>
                     <div>{person.street}</div> 
                     <div>{person.city} {person.zip}</div>
                     <div>{country}</div>
-                </p>
                 <p>
                     <strong>Poznámka:</strong>
                     <br/>
                     {person.note}
                 </p>
+            </div>
         </>
     );
 };

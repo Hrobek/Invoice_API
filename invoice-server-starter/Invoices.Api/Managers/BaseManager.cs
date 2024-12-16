@@ -2,8 +2,6 @@
 using Invoices.Api.Interfaces;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
-using Invoices.Data.Repositories;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Invoices.Api.Managers
 {

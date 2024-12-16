@@ -1,11 +1,6 @@
-﻿using AutoMapper;
-using Invoices.Api.Interfaces;
-using Invoices.Api.Managers;
+﻿using Invoices.Api.Interfaces;
 using Invoices.Api.Models;
-using Invoices.Data;
-using Invoices.Data.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Invoices.Api.Controllers
 {

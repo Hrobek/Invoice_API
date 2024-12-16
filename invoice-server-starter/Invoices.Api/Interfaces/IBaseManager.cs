@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Invoices.Api.Interfaces
+﻿namespace Invoices.Api.Interfaces
 {
     public interface IBaseManager<TDto, TEntity> where TDto : class where TEntity : class
     {

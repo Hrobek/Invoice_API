@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiGet } from '../utils/api';
 import ReactPaginate from "react-paginate";
+import { Link } from 'react-router-dom';
 
 const StatisticTable= ({items}) => {
   const [statistics, setStatistics] = useState([]);
@@ -30,6 +31,7 @@ return (
             <th>#</th>
             <th>Jméno</th>
             <th>Fakturované příjmy</th>
+            <th>Akce</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,14 @@ return (
               <td>{index + 1 + offset}</td>
               <td>{item.name}</td>
               <td>{statistics[index]?.revenue} Kč</td>
+              <td>
+                <Link
+                    to={"/persons/show/" + item._id}
+                    className="btn btn-sm btn-secondary"
+                >
+                    Zobrazit
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

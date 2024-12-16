@@ -36,6 +36,7 @@ const PurchasesTable = ({ identificationNumber}) => {
                     <th>#</th>
                     <th>Číslo Faktury</th>
                     <th>Dodavatel</th>
+                    <th>Cena</th>
                     <th colSpan={3}>Akce</th>
                 </tr>
                 </thead>
@@ -45,6 +46,7 @@ const PurchasesTable = ({ identificationNumber}) => {
                         <td>{index + offset + 1}</td>
                         <td>{invoice.invoiceNumber}</td>
                         <td>{invoice.seller?.name}</td>
+                        <td>{invoice.price} Kč</td>
                         <td>
                             <div className="btn-group">
                                 <Link

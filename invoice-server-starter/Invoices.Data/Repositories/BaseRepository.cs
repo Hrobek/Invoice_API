@@ -13,7 +13,7 @@
  *    REKVALIFIKAČNÍ KURZY  <>  PROGRAMOVÁNÍ  <>  IT KARIÉRA
  *
  * Tento zdrojový kód je součástí profesionálních IT kurzů na
- * WWW.ITNETWORK.CZ
+ * WWW.ITNETWORK.CZs
  *
  * Kód spadá pod licenci PRO obsahu a vznikl díky podpoře
  * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
@@ -24,7 +24,6 @@ using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Linq.Expressions;
 
 namespace Invoices.Data.Repositories;
 
