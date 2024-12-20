@@ -24,15 +24,25 @@ using AutoMapper;
 using Invoices.Api.Models;
 using Invoices.Data.Models;
 
-namespace Invoices.Api;
-
-public class AutomapperConfigurationProfile : Profile
+namespace Invoices.Api
 {
-    public AutomapperConfigurationProfile()
+    /// <summary>
+    /// AutoMapper profile configuration for mapping between Data Models and DTOs.
+    /// </summary>
+    public class AutomapperConfigurationProfile : Profile
     {
-        CreateMap<Invoice, InvoiceDto>();
-        CreateMap<InvoiceDto, Invoice>();
-        CreateMap<Person, PersonDto>();
-        CreateMap<PersonDto, Person>();
+        /// <summary>
+        /// Constructor to define the mapping between source and destination objects.
+        /// </summary>
+        public AutomapperConfigurationProfile()
+        {
+            // Map between Invoice entity and InvoiceDto
+            CreateMap<Invoice, InvoiceDto>();    // Entity to DTO
+            CreateMap<InvoiceDto, Invoice>();    // DTO to Entity
+
+            // Map between Person entity and PersonDto
+            CreateMap<Person, PersonDto>();      // Entity to DTO
+            CreateMap<PersonDto, Person>();      // DTO to Entity
+        }
     }
 }

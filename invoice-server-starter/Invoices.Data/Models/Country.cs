@@ -22,7 +22,18 @@
 
 namespace Invoices.Data.Models;
 
+/// <summary>
+/// Represents the enumeration of supported countries.
+/// </summary>
 public enum Country
 {
-    CZECHIA, SLOVAKIA
+    /// <summary>
+    /// Represents the country Czechia.
+    /// </summary>
+    CZECHIA,
+
+    /// <summary>
+    /// Represents the country Slovakia.
+    /// </summary>
+    SLOVAKIA
 }

@@ -23,23 +23,52 @@
 using Invoices.Data.Models;
 using System.Text.Json.Serialization;
 
-namespace Invoices.Api.Models;
-
-public class PersonDto
+namespace Invoices.Api.Models
 {
-    [JsonPropertyName("_id")]
-    public uint Id { get; set; }
-    public string Name { get; set; } = "";
-    public string IdentificationNumber { get; set; } = "";
-    public string TaxNumber { get; set; } = "";
-    public string AccountNumber { get; set; } = "";
-    public string BankCode { get; set; } = "";
-    public string Iban { get; set; } = "";
-    public string Telephone { get; set; } = "";
-    public string Mail { get; set; } = "";
-    public string Street { get; set; } = "";
-    public string Zip { get; set; } = "";
-    public string City { get; set; } = "";
-    public string Note { get; set; } = "";
-    public Country Country { get; set; }
+    // DTO (Data Transfer Object) for representing a person with their detailed information
+    public class PersonDto
+    {
+        // Unique identifier for the person, serialized with the name "_id"
+        [JsonPropertyName("_id")]
+        public uint Id { get; set; }
+
+        // Name of the person
+        public string Name { get; set; } = "";
+
+        // Identification number (e.g., national ID, company registration number)
+        public string IdentificationNumber { get; set; } = "";
+
+        // Tax identification number for the person or entity
+        public string TaxNumber { get; set; } = "";
+
+        // Bank account number of the person
+        public string AccountNumber { get; set; } = "";
+
+        // Bank code (e.g., bank branch or specific identifier for the bank)
+        public string BankCode { get; set; } = "";
+
+        // International Bank Account Number (IBAN) for the person
+        public string Iban { get; set; } = "";
+
+        // Telephone number of the person
+        public string Telephone { get; set; } = "";
+
+        // Email address of the person
+        public string Mail { get; set; } = "";
+
+        // Street address of the person
+        public string Street { get; set; } = "";
+
+        // Postal code for the person's address
+        public string Zip { get; set; } = "";
+
+        // City where the person resides
+        public string City { get; set; } = "";
+
+        // Additional notes related to the person
+        public string Note { get; set; } = "";
+
+        // Country where the person is located
+        public Country Country { get; set; }
+    }
 }

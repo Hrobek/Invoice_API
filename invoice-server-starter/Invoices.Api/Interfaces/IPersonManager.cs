@@ -25,8 +25,22 @@ using Invoices.Data.Models;
 
 namespace Invoices.Api.Interfaces;
 
-public interface IPersonManager : IBaseManager<PersonDto,Person>
+/// <summary>
+/// Defines operations for managing persons and their related DTOs.
+/// </summary>
+public interface IPersonManager : IBaseManager<PersonDto, Person>
 {
+    /// <summary>
+    /// Asynchronously retrieves statistics for persons, such as their revenue, name and ID.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains a list of <see cref="PersonStatisticsDto"/>.</returns>
     Task<List<PersonStatisticsDto>> GetPersonStatisticsAsync();
+
+    /// <summary>
+    /// Updates an existing person with the specified ID and new data.
+    /// </summary>
+    /// <param name="Id">The ID of the person to update.</param>
+    /// <param name="updatedPersonDto">The new data for the person.</param>
+    /// <returns>A <see cref="PersonDto"/> representing the updated person, or null if the person does not exist.</returns>
     PersonDto? Update(ulong Id, PersonDto updatedPersonDto);
 }

@@ -33,47 +33,54 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Retrieve the connection string from the app's configuration
 var connectionString = builder.Configuration.GetConnectionString("LocalInvoicesConnection");
 
+// Register the DbContext with SQL Server connection and enable Lazy Loading proxies
 builder.Services.AddDbContext<InvoicesDbContext>(options =>
-    options.UseSqlServer(connectionString)
-        .UseLazyLoadingProxies()
-        .ConfigureWarnings(x => x.Ignore(CoreEventId.LazyLoadOnDisposedContextWarning)));
+    options.UseSqlServer(connectionString)    // Configures SQL Server as the database provider
+        .UseLazyLoadingProxies()              // Enables lazy loading of related entities
+        .ConfigureWarnings(x => x.Ignore(CoreEventId.LazyLoadOnDisposedContextWarning))); // Suppress warning for lazy loading with disposed context
 
+// Add controllers and configure JSON serialization options
 builder.Services.AddControllers().AddJsonOptions(options =>
-    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));  // Converts enum to string during JSON serialization
 
-builder.Services.AddEndpointsApiExplorer();
+// Add Swagger API documentation and UI for development
+builder.Services.AddEndpointsApiExplorer(); // Adds support for API explorer
 builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("invoices", new OpenApiInfo
     {
-        Version = "v1",
-        Title = "Invoices"
+        Version = "v1",        // API version
+        Title = "Invoices"     // API title
     }));
 
-builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+// Register repositories and managers with dependency injection
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();  // Registers the PersonRepository
+builder.Services.AddScoped<IPersonManager, PersonManager>();       // Registers the PersonManager
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>(); // Registers the InvoiceRepository
+builder.Services.AddScoped<IInvoiceManager, InvoiceManager>();    // Registers the InvoiceManager
 
-builder.Services.AddScoped<IPersonManager, PersonManager>();
-
-builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
-
-builder.Services.AddScoped<IInvoiceManager, InvoiceManager>();
-
-builder.Services.AddAutoMapper(typeof(AutomapperConfigurationProfile));
+// Add AutoMapper for object-to-object mapping
+builder.Services.AddAutoMapper(typeof(AutomapperConfigurationProfile)); // Configures AutoMapper
 
 var app = builder.Build();
 
+// Configure middleware for development environment
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
+    app.UseSwagger(); // Enable Swagger UI
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("invoices/swagger.json", "Invoices - v1");
+        options.SwaggerEndpoint("invoices/swagger.json", "Invoices - v1"); // Swagger UI endpoint
     });
 }
 
-app.MapGet("/", () => "Hello World!");
+// Map a basic route for testing
+app.MapGet("/", () => "Hello World!"); // Simple route that returns "Hello World!"
 
-app.MapControllers();
+// Map controllers to handle API requests
+app.MapControllers(); // Maps API routes to controllers
 
-app.Run();
+// Run the application
+app.Run(); // Starts the web application

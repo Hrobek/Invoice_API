@@ -22,10 +22,24 @@
 
 using Invoices.Data.Models;
 
-namespace Invoices.Data.Interfaces;
-
-public interface IPersonRepository : IBaseRepository<Person>
+namespace Invoices.Data.Interfaces
 {
-    IList<Person> GetAllByHidden(bool hidden);
-    Task<List<(ulong Id, string PersonName, decimal Revenue)>> GetPersonStatisticsAsync();
+    /// <summary>
+    /// Repository interface for managing Person entities, extending the base repository functionality.
+    /// </summary>
+    public interface IPersonRepository : IBaseRepository<Person>
+    {
+        /// <summary>
+        /// Retrieves a list of persons filtered by the "hidden" status.
+        /// </summary>
+        /// <param name="hidden">Filter by hidden status. Only persons with the specified hidden status will be returned.</param>
+        /// <returns>A list of persons matching the specified hidden status.</returns>
+        IList<Person> GetAllByHidden(bool hidden);
+
+        /// <summary>
+        /// Retrieves statistics for persons, including their ID, name, and total revenue from sales.
+        /// </summary>
+        /// <returns>A list of tuples where each tuple contains the person's ID, name, and total revenue.</returns>
+        Task<List<(ulong Id, string PersonName, decimal Revenue)>> GetPersonStatisticsAsync();
+    }
 }
