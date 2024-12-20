@@ -71,8 +71,7 @@
               "RelativeToolTip": "Invoices.Api\\Controllers\\InvoicesController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAFQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:04:05.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:04:05.72Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Invoices.Api\\Controllers\\PersonsController.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAiwHAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:02:40.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:02:40.601Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Invoices.Api\\Models\\PersonStatisticsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:02:17.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:02:17.643Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Invoices.Api\\Interfaces\\IPersonManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:01:41.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:01:41.587Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Invoices.Api\\Interfaces\\IInvoiceManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:00:46.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:00:46.588Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "Invoices.Api\\Interfaces\\IBaseManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:00:11.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:00:11.806Z"
             }
           ]
         },

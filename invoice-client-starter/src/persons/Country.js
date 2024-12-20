@@ -20,9 +20,12 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
+// Create a Country object with two properties: CZECHIA and SLOVAKIA
+// Object.freeze() is used to make the object immutable, meaning its properties cannot be added, removed, or modified
 const Country = Object.freeze({
-    CZECHIA: 'CZECHIA',
-    SLOVAKIA: 'SLOVAKIA',
+    CZECHIA: 'CZECHIA', // Represents the country "Czechia"
+    SLOVAKIA: 'SLOVAKIA', // Represents the country "Slovakia"
 });
 
+// Export the Country object as the default export for use in other modules
 export default Country;

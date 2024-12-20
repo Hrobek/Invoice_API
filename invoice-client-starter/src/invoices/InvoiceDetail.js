@@ -1,65 +1,51 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
- *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
-
-import React, {useEffect, useState} from "react";
-import {Link, useParams} from "react-router-dom";
-
-import {apiGet} from "../utils/api";
-import { dateStringFormatter } from "../utils/dateStringFormatter";
-import PersonDetailTable from "../persons/PersonDetailTable";
+// Importing necessary modules and components for the InvoiceDetail page
+import React, { useEffect, useState } from "react"; // React and hooks for state and effect management
+import { Link, useParams } from "react-router-dom"; // Router for dynamic URL routing
+import { apiGet } from "../utils/api"; // Custom function for GET request to fetch data
+import { dateStringFormatter } from "../utils/dateStringFormatter"; // Utility function to format date strings
+import PersonDetailTable from "../persons/PersonDetailTable"; // Component to display details for persons (buyer and seller)
 
 const InvoiceDetail = () => {
-    const {id} = useParams();
+    // Extracting the invoice ID from the URL params
+    const { id } = useParams();
+    
+    // State to store the invoice details
     const [invoice, setInvoice] = useState({});
 
     useEffect(() => {
-            apiGet("/api/invoices/" + id)
+        // Fetching the invoice details using the `id` from the URL
+        apiGet("/api/invoices/" + id)
             .then((data) => {
+                // Formatting and setting the fetched data in the state
                 setInvoice({
-                invoiceNumber: data.invoiceNumber,
-                seller: data.seller,
-                buyer: data.buyer,
-                issued: dateStringFormatter(data.issued, true),
-                date: dateStringFormatter(data.date, true),
-                product: data.product,
-                price: data.price,
-                vat: data.vat,
-                note: data.note,
-            });
-        })
+                    invoiceNumber: data.invoiceNumber,   // Invoice number
+                    seller: data.seller,                  // Seller information
+                    buyer: data.buyer,                    // Buyer information
+                    issued: dateStringFormatter(data.issued, true), // Formatted issued date
+                    date: dateStringFormatter(data.date, true),     // Formatted due date
+                    product: data.product,                // Product information
+                    price: data.price,                    // Price of the product
+                    vat: data.vat,                        // VAT percentage
+                    note: data.note,                      // Additional notes for the invoice
+                });
+            })
             .catch((error) => {
-            console.error(error);
-          });
-        // TODO: Add HTTP req.
+                // Handling any errors that occur during the fetch request
+                console.error(error);
+            });
+        // Effect runs again when `id` changes
     }, [id]);
 
     return (
         <>
+            {/* Invoice Detail Title */}
             <div>
                 <h1>Detail faktury</h1>
                 <hr/>
                 <h3 className="text-center display-4">{invoice.invoiceNumber}</h3>
                 <div className="container mt-5">
                     <div className="row">
+                        {/* Seller Details Section */}
                         <div className="col-md-6 nameContainer p-3 bg-light border text-left">
                             <PersonDetailTable
                             id={invoice.seller?._id}/>
@@ -70,7 +56,7 @@ const InvoiceDetail = () => {
                                     Zobrazit
                                 </Link>
                         </div>
-        
+                             {/* Buyer Details Section */}
                             <div className="col-md-6 nameContainer p-3 bg-light border text-left">
                                 <PersonDetailTable
                                 id={invoice.buyer?._id}/>
@@ -84,6 +70,7 @@ const InvoiceDetail = () => {
                         </div>
                     </div>
                 </div>
+                   {/* Invoice Details Display Section */}
                 <div className="mt-4 p-3 bg-secondary text-white text-center">
                     <p>
                         <strong>Vytvořeno:</strong>

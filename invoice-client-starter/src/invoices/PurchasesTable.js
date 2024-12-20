@@ -1,89 +1,104 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { apiGet } from "../utils/api"; // Import utility function for API calls
+import ReactPaginate from "react-paginate"; // Import pagination library
 
-
-import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
-import { apiGet } from "../utils/api";
-import ReactPaginate from "react-paginate";
-
-const PurchasesTable = ({ identificationNumber}) => {
+const PurchasesTable = ({ identificationNumber }) => {
+    // State to store invoices fetched from the API
     const [invoices, setInvoices] = useState([]);
 
+    // State to track the current page in pagination
     const [currentPage, setCurrentPage] = useState(0);
-    const itemsPerPage = 10;
+    const itemsPerPage = 10; // Number of items displayed per page
 
-    // Výpočet aktuálních položek
+    // Calculate the starting index for the current page
     const offset = currentPage * itemsPerPage;
+
+    // Slice the invoices to get the items for the current page
     const currentItems = invoices.slice(offset, offset + itemsPerPage);
+
+    // Calculate the total number of pages for pagination
     const pageCount = Math.ceil(invoices.length / itemsPerPage);
 
+    // Event handler for page change in the pagination component
     const handlePageClick = ({ selected }) => {
-        setCurrentPage(selected);
-    }
+        setCurrentPage(selected); // Update the current page
+    };
 
+    // Fetch invoices when the identification number changes
     useEffect(() => {
         if (identificationNumber) {
-            apiGet("/api/identification/" + identificationNumber + "/purchases/").then((data) => setInvoices(data));
+            apiGet(`/api/identification/${identificationNumber}/purchases/`)
+                .then((data) => setInvoices(data)); // Update state with fetched data
         }
-    }, [identificationNumber]);
+    }, [identificationNumber]); // Dependency array ensures this runs when `identificationNumber` changes
 
     return (
         <div>
-                <div className="fw-bold">Vystavené faktury</div>
-        
+            {/* Table title */}
+            <div className="fw-bold">Vystavené faktury</div>
+
+            {/* Display a table of purchase invoices */}
             <table className="table table-bordered">
                 <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Číslo Faktury</th>
-                    <th>Dodavatel</th>
-                    <th>Cena</th>
-                    <th colSpan={3}>Akce</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Číslo Faktury</th> {/* Invoice number */}
+                        <th>Dodavatel</th> {/* Supplier */}
+                        <th>Cena</th> {/* Price */}
+                        <th colSpan={3}>Akce</th> {/* Actions */}
+                    </tr>
                 </thead>
                 <tbody>
-                {invoices.map((invoice, index) => (
-                    <tr key={index + offset + 1}>
-                        <td>{index + offset + 1}</td>
-                        <td>{invoice.invoiceNumber}</td>
-                        <td>{invoice.seller?.name}</td>
-                        <td>{invoice.price} Kč</td>
-                        <td>
-                            <div className="btn-group">
-                                <Link
-                                    to={`/invoices/show/${invoice._id}`}
-                                    className="btn btn-sm btn-secondary"
-                                >
-                                    Zobrazit
-                                </Link>
-                            </div>
-                        </td>
-                    </tr>
-                ))}
+                    {/* Render rows for each invoice in the current page */}
+                    {invoices.map((invoice, index) => (
+                        <tr key={index + offset + 1}>
+                            {/* Display sequential index */}
+                            <td>{index + offset + 1}</td>
+                            {/* Display invoice details */}
+                            <td>{invoice.invoiceNumber}</td>
+                            <td>{invoice.seller?.name}</td> {/* Optional chaining to handle null/undefined */}
+                            <td>{invoice.price} Kč</td>
+                            <td>
+                                {/* Action buttons */}
+                                <div className="btn-group">
+                                    <Link
+                                        to={`/invoices/show/${invoice._id}`} // Link to view invoice details
+                                        className="btn btn-sm btn-secondary"
+                                    >
+                                        Zobrazit {/* Button label */}
+                                    </Link>
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
+
+            {/* Pagination controls */}
             {currentItems.length > itemsPerPage && (
-            <ReactPaginate
-                previousLabel={"Předchozí"}
-                nextLabel={"Další"}
-                breakLabel={"..."}
-                breakClassName={"page-item"}
-                breakLinkClassName={"page-link"}
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName={"pagination justify-content-center"}
-                pageClassName={"page-item"}
-                pageLinkClassName={"page-link"}
-                previousClassName={"page-item"}
-                previousLinkClassName={"page-link"}
-                nextClassName={"page-item"}
-                nextLinkClassName={"page-link"}
-                activeClassName={"active"}
-            />
+                <ReactPaginate
+                    previousLabel={"Předchozí"} // Label for the previous page button
+                    nextLabel={"Další"} // Label for the next page button
+                    breakLabel={"..."} // Label for breaks between page numbers
+                    breakClassName={"page-item"} // Class for the break element
+                    breakLinkClassName={"page-link"} // Class for the break link
+                    pageCount={pageCount} // Total number of pages
+                    marginPagesDisplayed={2} // Number of margin pages displayed
+                    pageRangeDisplayed={5} // Number of pages displayed in the range
+                    onPageChange={handlePageClick} // Handler for page change
+                    containerClassName={"pagination justify-content-center"} // Class for pagination container
+                    pageClassName={"page-item"} // Class for individual page items
+                    pageLinkClassName={"page-link"} // Class for individual page links
+                    previousClassName={"page-item"} // Class for the previous button
+                    previousLinkClassName={"page-link"} // Class for the previous link
+                    nextClassName={"page-item"} // Class for the next button
+                    nextLinkClassName={"page-link"} // Class for the next link
+                    activeClassName={"active"} // Class for the active page
+                />
             )}
         </div>
     );
 };
 
-export default PurchasesTable;
+export default PurchasesTable; // Export the component for use in other parts of the app

@@ -21,87 +21,102 @@
  */
 
 import ReactPaginate from "react-paginate";
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const PersonTable = ({label, items, deletePerson}) => {
-    const [currentPage, setCurrentPage] = useState(0);
-    const itemsPerPage = 10;
+// Component to display a paginated table of persons with actions for each person
+const PersonTable = ({ label, items, deletePerson }) => {
+    const [currentPage, setCurrentPage] = useState(0); // State to track the current page
+    const itemsPerPage = 10; // Number of items displayed per page
 
-    // Výpočet aktuálních položek
+    // Calculate the starting index of the current page
     const offset = currentPage * itemsPerPage;
+    // Extract the items to be displayed on the current page
     const currentItems = items.slice(offset, offset + itemsPerPage);
+    // Calculate the total number of pages
     const pageCount = Math.ceil(items.length / itemsPerPage);
 
+    // Handle pagination when the user clicks a page number
     const handlePageClick = ({ selected }) => {
-        setCurrentPage(selected);
-    }
+        setCurrentPage(selected); // Update the current page
+    };
+
     return (
         <div>
+            {/* Display the label and total count of items */}
             <p>
                 {label} {items.length}
             </p>
 
+            {/* Table to display person data */}
             <table className="table table-bordered">
                 <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Jméno</th>
-                    <th colSpan={3}>Akce</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Jméno</th>
+                        <th colSpan={3}>Akce</th> {/* Action buttons */}
+                    </tr>
                 </thead>
                 <tbody>
-                {currentItems.map((item, index) => (
-                    <tr key={index + offset + 1}>
-                        <td>{index + 1 + offset}</td>
-                        <td>{item.name}</td>
-                        <td>
-                            <div className="btn-group">
-                                <Link
-                                    to={"/persons/show/" + item._id}
-                                    className="btn btn-sm btn-info"
-                                >
-                                    Zobrazit
-                                </Link>
-                                <Link
-                                    to={"/persons/edit/" + item._id}
-                                    className="btn btn-sm btn-warning"
-                                >
-                                    Upravit
-                                </Link>
-                                <button
-                                    onClick={() => deletePerson(item._id)}
-                                    className="btn btn-sm btn-danger"
-                                >
-                                    Odstranit
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                ))}
+                    {/* Render each item in the currentItems list */}
+                    {currentItems.map((item, index) => (
+                        <tr key={index + offset + 1}>
+                            <td>{index + 1 + offset}</td> {/* Row number */}
+                            <td>{item.name}</td> {/* Person's name */}
+                            <td>
+                                <div className="btn-group">
+                                    {/* Link to view details of the person */}
+                                    <Link
+                                        to={"/persons/show/" + item._id}
+                                        className="btn btn-sm btn-info"
+                                    >
+                                        Zobrazit
+                                    </Link>
+                                    {/* Link to edit the person */}
+                                    <Link
+                                        to={"/persons/edit/" + item._id}
+                                        className="btn btn-sm btn-warning"
+                                    >
+                                        Upravit
+                                    </Link>
+                                    {/* Button to delete the person */}
+                                    <button
+                                        onClick={() => deletePerson(item._id)}
+                                        className="btn btn-sm btn-danger"
+                                    >
+                                        Odstranit
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
+
+            {/* Display pagination controls if there are more items than itemsPerPage */}
             {items.length > itemsPerPage && (
-            <ReactPaginate
-                previousLabel={"Předchozí"}
-                nextLabel={"Další"}
-                breakLabel={"..."}
-                breakClassName={"page-item"}
-                breakLinkClassName={"page-link"}
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName={"pagination justify-content-center"}
-                pageClassName={"page-item"}
-                pageLinkClassName={"page-link"}
-                previousClassName={"page-item"}
-                previousLinkClassName={"page-link"}
-                nextClassName={"page-item"}
-                nextLinkClassName={"page-link"}
-                activeClassName={"active"}
-            />
+                <ReactPaginate
+                    previousLabel={"Předchozí"} // Label for previous page button
+                    nextLabel={"Další"} // Label for next page button
+                    breakLabel={"..."} // Label for break in pagination
+                    breakClassName={"page-item"} // Class for break element
+                    breakLinkClassName={"page-link"} // Class for break link
+                    pageCount={pageCount} // Total number of pages
+                    marginPagesDisplayed={2} // Number of margin pages displayed
+                    pageRangeDisplayed={5} // Number of page links displayed in the middle
+                    onPageChange={handlePageClick} // Function to handle page changes
+                    containerClassName={"pagination justify-content-center"} // Class for pagination container
+                    pageClassName={"page-item"} // Class for each page item
+                    pageLinkClassName={"page-link"} // Class for each page link
+                    previousClassName={"page-item"} // Class for previous button
+                    previousLinkClassName={"page-link"} // Class for previous button link
+                    nextClassName={"page-item"} // Class for next button
+                    nextLinkClassName={"page-link"} // Class for next button link
+                    activeClassName={"active"} // Class for the active page
+                />
             )}
+
+            {/* Button to navigate to the "Create New Person" form */}
             <Link to={"/persons/create"} className="btn btn-success">
                 Nová osoba
             </Link>

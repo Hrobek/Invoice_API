@@ -1,40 +1,20 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
- *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
+// Importing necessary libraries and components
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-import React, {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import { apiGet, apiPost, apiPut } from "../utils/api"; // API utility functions for HTTP methods
 
-import {apiGet, apiPost, apiPut} from "../utils/api";
+import InputField from "../components/InputField"; // Component for input fields
+import InputCheck from "../components/InputCheck"; // Component for radio buttons
+import FlashMessage from "../components/FlashMessage"; // Component for displaying success/error messages
 
-import InputField from "../components/InputField";
-import InputCheck from "../components/InputCheck";
-import FlashMessage from "../components/FlashMessage";
-
-import Country from "./Country";
+import Country from "./Country"; // Enum-like object defining country constants
 
 const PersonForm = () => {
-    const navigate = useNavigate();
-    const {id} = useParams();
+    const navigate = useNavigate(); // Hook for navigation
+    const { id } = useParams(); // Extracting `id` from the URL parameters
     const [person, setPerson] = useState({
+        // State to store person details
         name: "",
         identificationNumber: "",
         taxNumber: "",
@@ -46,41 +26,43 @@ const PersonForm = () => {
         street: "",
         zip: "",
         city: "",
-        country: Country.CZECHIA,
+        country: Country.CZECHIA, // Default value for country
         note: ""
     });
-    const [sentState, setSent] = useState(false);
-    const [successState, setSuccess] = useState(false);
-    const [errorState, setError] = useState(null);
-    const isPutRequest =  Boolean(id);
+    const [sentState, setSent] = useState(false); // Tracks if the form was submitted
+    const [successState, setSuccess] = useState(false); // Tracks if the operation succeeded
+    const [errorState, setError] = useState(null); // Stores any error messages
+    const isPutRequest = Boolean(id); // Determines if this is an edit operation
 
     useEffect(() => {
+        // If editing, fetch the existing person's data
         if (id) {
             apiGet("/api/persons/" + id).then((data) => setPerson(data));
         }
     }, [id]);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevents default form submission
 
+        // API call: POST for creating a new person, PUT for updating an existing one
         (id ? apiPut("/api/persons/" + id, person) : apiPost("/api/persons", person))
             .then((data) => {
-                setSent(true);
-                setSuccess(true);
+                setSent(true); // Mark form as submitted
+                setSuccess(true); // Operation succeeded
                 setTimeout(() => {
-                    navigate("/persons"); // Přesměrování po 3 sekundách
+                    navigate("/persons"); // Redirect to persons list after 1 second
                 }, 1000);
             })
             .catch((error) => {
-                console.log(error.message);
-                setError(error.message);
-                setSent(true);
-                setSuccess(false);
+                console.log(error.message); // Log the error for debugging
+                setError(error.message); // Store the error message
+                setSent(true); // Mark form as submitted
+                setSuccess(false); // Operation failed
             });
     };
 
-    const sent = sentState;
-    const success = successState;
+    const sent = sentState; 
+    const success = successState; 
 
     return (
         <div>
