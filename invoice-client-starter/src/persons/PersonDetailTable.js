@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { apiGet } from "../utils/api"; // Utility function for making GET requests
 import Country from "./Country"; // Enum-like object defining country constants
 
-const PersonDetailTable = ({ id }) => {
+const PersonDetailTable = ({ id, label}) => {
     const [person, setPerson] = useState({}); // State to store the person details
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const PersonDetailTable = ({ id }) => {
     return (
         <>
             <div>
-                <h1 className="text-center">Detail osoby</h1> {/* Page heading */}
+                <h1 className="text-center">{label}</h1> {/* Page heading */}
                 <hr />
                 <h3>{person.name}</h3> {/* Display person's name */}
 

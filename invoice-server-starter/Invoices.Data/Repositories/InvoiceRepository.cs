@@ -81,7 +81,7 @@ public class InvoiceRepository : BaseRepository<Invoice>, IInvoiceRepository
     public async Task<long> GetCurrentYearSumAsync(int year)
     {
         return await invoicesDbContext.Invoices
-            .Where(i => i.Date.Year == year) // Filter invoices by year.
+            .Where(i => i.DueDate.Year == year) // Filter invoices by year.
             .SumAsync(i => i.Price); // Calculate the sum of prices.
     }
 

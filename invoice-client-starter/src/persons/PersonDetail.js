@@ -50,13 +50,13 @@ const PersonDetail = () => {
             <div>
                 {/* Container for the person detail table */}
                 <div className="mt-3 container p-3 bg-light border text-left">
-                    <PersonDetailTable id={person._id} /> {/* Display detailed person information */}
+                    <PersonDetailTable id={person._id}  label="Detail Osoby" /> {/* Display detailed person information */}
                 </div>
             </div>
 
             {/* Buttons for toggling visibility of invoices sections */}
             <button
-                className="btn btn-secondary mb-3 mt-3 me-2"
+                className="btn btn-primary mb-3 mt-3 me-2"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
@@ -66,7 +66,7 @@ const PersonDetail = () => {
                 Přijaté faktury {/* Label for received invoices */}
             </button>
             <button
-                className="btn btn-secondary mb-3 mt-3"
+                className="btn btn-primary mb-3 mt-3"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"

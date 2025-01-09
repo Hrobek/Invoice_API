@@ -21,8 +21,8 @@ const InvoiceForm = () => {
     const [buyerState, setBuyer] = useState(""); // Buyer ID
     const [sellerState, setSeller] = useState(""); // Seller ID
     const [productState, setProduct] = useState(""); // Product name
-    const [priceState, setPrice] = useState(0); // Price of the product
-    const [vatState, setVat] = useState(0); // VAT amount
+    const [priceState, setPrice] = useState(""); // Price of the product
+    const [vatState, setVat] = useState(""); // VAT amount
     const [noteState, setNote] = useState(""); // Invoice note
     const [sentState, setSent] = useState(false); // Flag to track if the form has been submitted
     const [successState, setSuccess] = useState(false); // Flag to track if the submission was successful
@@ -39,7 +39,7 @@ const InvoiceForm = () => {
         else if (name === 'buyer') { setBuyer(value); }
         else if (name === 'seller') { setSeller(value); }
         else if (name === 'issued') { setIssued(value); }
-        else if (name === 'date') { setDate(value); }
+        else if (name === 'dueDate') { setDate(value); }
         else if (name === 'product') { setProduct(value); }
         else if (name === 'price') { setPrice(value); }
         else if (name === 'vat') { setVat(value); }
@@ -56,7 +56,7 @@ const InvoiceForm = () => {
             buyerId: buyerState,
             sellerId: sellerState,
             issued: issuedState,
-            date: dateState,
+            dueDate: dateState,
             product: productState,
             price: priceState,
             vat: vatState,
@@ -91,7 +91,7 @@ const InvoiceForm = () => {
                 apiGet("/api/invoices/" + id).then((invoiceData) => {
                     setInvoiceNumber(invoiceData.invoiceNumber);
                     setIssued(dateStringFormatter(invoiceData.issued)); // Format issued date
-                    setDate(dateStringFormatter(invoiceData.date)); // Format due date
+                    setDate(dateStringFormatter(invoiceData.dueDate)); // Format due date
                     setBuyer(invoiceData.buyer._id); // Set the buyer
                     setSeller(invoiceData.seller._id); // Set the seller
                     setProduct(invoiceData.product); // Set the product
@@ -150,7 +150,7 @@ const InvoiceForm = () => {
 
                 <InputField
                     required={true}
-                    type="date"
+                    type="Date"
                     name="issued"
                     label="Datum vytvoření"
                     prompt="Zadejte datum vytvoření"
@@ -162,7 +162,7 @@ const InvoiceForm = () => {
                 <InputField
                     required={true}
                     type="date"
-                    name="date"
+                    name="dueDate"
                     label="Datum splatnosti"
                     prompt="Zadejte datum splatnosti"
                     min="0000-01-01"

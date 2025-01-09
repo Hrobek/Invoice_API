@@ -31,7 +31,11 @@ const InvoiceTable = ({ items, deleteInvoice }) => {
                 <thead>
                     <tr>
                         <th>#</th> {/* Serial number */}
-                        <th>Číslo faktury</th> {/* Invoice number */}
+                        <th>Číslo faktury</th>{/* Invoice number */}
+                        <th>Odběratel</th> 
+                        <th>Dodavatel</th>
+                        <th>Produkt</th> 
+                        <th>Cena</th> 
                         <th colSpan={3}>Akce</th> {/* Actions column with buttons for each row */}
                     </tr>
                 </thead>
@@ -41,6 +45,10 @@ const InvoiceTable = ({ items, deleteInvoice }) => {
                         <tr key={index + offset + 1}>
                             <td>{index + 1 + offset}</td> {/* Display the item number with offset */}
                             <td>{item.invoiceNumber}</td> {/* Display the invoice number */}
+                            <td>{item.buyer?.name}</td> 
+                            <td>{item.seller?.name}</td>
+                            <td>{item.product}</td> 
+                            <td>{item.price} Kč</td> 
                             <td>
                                 {/* Grouped action buttons for each invoice */}
                                 <div className="btn-group">
@@ -60,9 +68,13 @@ const InvoiceTable = ({ items, deleteInvoice }) => {
                                     </Link>
                                     {/* Delete invoice button */}
                                     <button
-                                        onClick={() => deleteInvoice(item._id)} // Call deleteInvoice function passed via props
+                                        onClick={() => {
+                                            if (window.confirm("Opravdu chcete odstranit tuto fakturu?")) {
+                                            deleteInvoice(item._id); // Call deleteInvoice only if the user confirms
+                                            }
+                                        }}
                                         className="btn btn-sm btn-danger"
-                                    >
+>
                                         Odstranit
                                     </button>
                                 </div>

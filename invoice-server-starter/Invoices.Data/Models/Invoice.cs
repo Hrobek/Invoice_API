@@ -32,7 +32,7 @@ namespace Invoices.Data.Models
         /// The date of the invoice transaction.
         /// </summary>
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime DueDate { get; set; }
 
         /// <summary>
         /// Name of the product or service associated with the invoice.

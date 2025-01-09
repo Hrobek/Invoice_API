@@ -81,9 +81,13 @@ const PersonTable = ({ label, items, deletePerson }) => {
                                     </Link>
                                     {/* Button to delete the person */}
                                     <button
-                                        onClick={() => deletePerson(item._id)}
+                                        onClick={() => {
+                                            if (window.confirm("Opravdu chcete odstranit tuto osobu?")) {
+                                            deletePerson(item._id); // Call deleteInvoice only if the user confirms
+                                            }
+                                        }}
                                         className="btn btn-sm btn-danger"
-                                    >
+>
                                         Odstranit
                                     </button>
                                 </div>

@@ -22,7 +22,7 @@ namespace Invoices.Api.Models
         public DateTime Issued { get; set; }
 
         // The date of the transaction invoice 
-        public DateTime Date { get; set; }
+        public DateTime DueDate { get; set; }
 
         // The product or service being invoiced
         public string Product { get; set; } = "";

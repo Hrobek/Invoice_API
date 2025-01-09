@@ -39,7 +39,7 @@ namespace Invoices.Data.Migrations
                     b.Property<decimal?>("BuyerId")
                         .HasColumnType("decimal(20,0)");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("InvoiceNumber")

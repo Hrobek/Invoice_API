@@ -28,7 +28,7 @@ namespace Invoices.Api.Models
         public DateTime Issued { get; set; }
 
         // The date when the transaction (purchase) occurred
-        public DateTime Date { get; set; }
+        public DateTime DueDate { get; set; }
 
         // The name or description of the product associated with the invoice
         public string Product { get; set; } = "";

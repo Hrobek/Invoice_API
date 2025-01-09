@@ -175,7 +175,7 @@ namespace Invoices.Api.Managers
                 Buyer = invoice.Buyer,
                 Seller = invoice.Seller,
                 Issued = invoice.Issued,
-                Date = invoice.Date,
+                DueDate = invoice.DueDate,
                 Product = invoice.Product,
                 Price = invoice.Price,
                 Vat = invoice.Vat,

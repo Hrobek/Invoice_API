@@ -47,7 +47,7 @@ const StatisticTable = ({ items }) => {
                 {/* Link to show the details of the person */}
                 <Link
                   to={"/persons/show/" + item._id}
-                  className="btn btn-sm btn-secondary"
+                  className="btn btn-sm btn-primary"
                 >
                   Zobrazit
                 </Link>

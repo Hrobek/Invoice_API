@@ -64,7 +64,7 @@ const PurchasesTable = ({ identificationNumber }) => {
                                 <div className="btn-group">
                                     <Link
                                         to={`/invoices/show/${invoice._id}`} // Link to view invoice details
-                                        className="btn btn-sm btn-secondary"
+                                        className="btn btn-sm btn-primary"
                                     >
                                         Zobrazit {/* Button label */}
                                     </Link>

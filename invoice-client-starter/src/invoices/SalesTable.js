@@ -59,7 +59,7 @@ const SalesTable = ({ identificationNumber }) => {
                                     {/* Link to view the invoice details */}
                                     <Link
                                         to={`/invoices/show/${invoice._id}`}
-                                        className="btn btn-sm btn-secondary"
+                                        className="btn btn-sm btn-primary"
                                     >
                                         Zobrazit {/* Display text */}
                                     </Link>

@@ -22,7 +22,7 @@ const InvoiceDetail = () => {
                     seller: data.seller,                  // Seller information
                     buyer: data.buyer,                    // Buyer information
                     issued: dateStringFormatter(data.issued, true), // Formatted issued date
-                    date: dateStringFormatter(data.date, true),     // Formatted due date
+                    dueDate: dateStringFormatter(data.dueDate, true),     // Formatted due date
                     product: data.product,                // Product information
                     price: data.price,                    // Price of the product
                     vat: data.vat,                        // VAT percentage
@@ -42,16 +42,16 @@ const InvoiceDetail = () => {
             <div>
                 <h1>Detail faktury</h1>
                 <hr/>
-                <h3 className="text-center display-4">{invoice.invoiceNumber}</h3>
+                <h3 className="text-center display-4">Číslo faktury: {invoice.invoiceNumber}</h3>
                 <div className="container mt-5">
                     <div className="row">
                         {/* Seller Details Section */}
                         <div className="col-md-6 nameContainer p-3 bg-light border text-left">
                             <PersonDetailTable
-                            id={invoice.seller?._id}/>
+                            id={invoice.seller?._id} label="Dodavatel"/>
                             <Link
                                     to={`/persons/show/${invoice.seller?._id}`}
-                                    className="btn btn-sm btn-secondary"
+                                    className="btn btn-sm btn-primary"
                                 >
                                     Zobrazit
                                 </Link>
@@ -59,10 +59,10 @@ const InvoiceDetail = () => {
                              {/* Buyer Details Section */}
                             <div className="col-md-6 nameContainer p-3 bg-light border text-left">
                                 <PersonDetailTable
-                                id={invoice.buyer?._id}/>
+                                id={invoice.buyer?._id}  label="Odběratel"/>
                                 <Link
                                     to={`/persons/show/${invoice.buyer?._id}`}
-                                    className="btn btn-sm btn-secondary"
+                                    className="btn btn-sm btn-primary"
                                 >
                                     Zobrazit
                                 </Link>
@@ -80,7 +80,7 @@ const InvoiceDetail = () => {
                     <p>
                         <strong>Splatnost:</strong>
                         <br/>
-                        {invoice.date}
+                        {invoice.dueDate}
                     </p>
                     <p>
                         <strong>Produkt:</strong>

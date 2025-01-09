@@ -527,7 +527,7 @@
             "type": "string",
             "format": "date-time"
           },
-          "date": {
+          "dueDate": {
             "type": "string",
             "format": "date-time"
           },
@@ -571,7 +571,7 @@
             "type": "string",
             "format": "date-time"
           },
-          "date": {
+          "dueDate": {
             "type": "string",
             "format": "date-time"
           },

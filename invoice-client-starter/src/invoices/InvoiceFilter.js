@@ -98,7 +98,7 @@ const InvoiceFilter = (props) => {
                 <div className="col">
                     <input
                         type="submit"
-                        className="btn btn-secondary float-right mt-2"
+                        className="btn btn-primary float-right mt-2"
                         value={props.confirm} // The text of the button (passed as prop)
                     />
                 </div>
